@@ -20,9 +20,25 @@ export default function Hero() {
     play();
     v.addEventListener("canplay", play, { once: true });
     v.addEventListener("loadeddata", play, { once: true });
+
+    // iOS fallback: if autoplay is blocked, start on the first user gesture.
+    const onGesture = () => {
+      play();
+      if (!v.paused) removeGestures();
+    };
+    const removeGestures = () => {
+      ["touchstart", "pointerdown", "scroll"].forEach((e) =>
+        window.removeEventListener(e, onGesture)
+      );
+    };
+    ["touchstart", "pointerdown", "scroll"].forEach((e) =>
+      window.addEventListener(e, onGesture, { passive: true })
+    );
+
     return () => {
       v.removeEventListener("canplay", play);
       v.removeEventListener("loadeddata", play);
+      removeGestures();
     };
   }, []);
 

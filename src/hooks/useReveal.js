@@ -22,11 +22,29 @@ export function useReveal(deps = []) {
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
+      // threshold 0: reveal as soon as the element's edge enters view. A
+      // percentage threshold breaks for tall stacked blocks on mobile (their
+      // top stays blank until a large share is visible).
+      { threshold: 0, rootMargin: "0px 0px -8% 0px" }
     );
 
     nodes.forEach((n) => io.observe(n));
-    return () => io.disconnect();
+
+    // Safety net: anything already within the viewport that the observer
+    // hasn't flipped shortly after mount gets revealed (covers reloads
+    // mid-page and any iOS timing quirks).
+    const settle = setTimeout(() => {
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      document.querySelectorAll(".reveal:not(.is-in)").forEach((n) => {
+        const r = n.getBoundingClientRect();
+        if (r.top < vh && r.bottom > 0) n.classList.add("is-in");
+      });
+    }, 600);
+
+    return () => {
+      clearTimeout(settle);
+      io.disconnect();
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 }

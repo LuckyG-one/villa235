@@ -1234,6 +1234,10 @@
   .story-media {
     max-width: 460px;
   }
+  .story-media-inset {
+    left: 0;
+    width: 42%;
+  }
   .journey-media {
     position: relative;
     top: 0;
