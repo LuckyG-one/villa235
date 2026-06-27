@@ -13,6 +13,8 @@ export default function Experience() {
 
   useEffect(() => {
     if (prefersReducedMotion()) return;
+    // Mobile/tablet: skip the pinned scrollytelling, use the stacked CSS fallback.
+    if (!window.matchMedia("(min-width: 768px)").matches) return;
     const el = root.current;
     if (!el) return;
 

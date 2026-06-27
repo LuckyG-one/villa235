@@ -312,15 +312,19 @@
   opacity: 0.92;
 }
 
-/* Reduced motion / no-JS fallback: stack the slides vertically. */
-@media (prefers-reduced-motion: reduce) {
+/* Reduced motion + mobile/tablet: no pin, stack the slides vertically. */
+@media (prefers-reduced-motion: reduce), (max-width: 767px) {
   .exp-stage {
     height: auto;
   }
   .exp-slide {
     position: relative;
     visibility: visible;
-    min-height: 80svh;
+    opacity: 1;
+    min-height: 70svh;
+  }
+  .exp-img {
+    transform: none !important;
   }
 }
 
