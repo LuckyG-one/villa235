@@ -29,8 +29,8 @@ export const t = {
 
     "exp.eyebrow": "Ervaar Villa 235",
     "exp.title": "Een dag die langzaam tot rust komt",
-    "exp.1.t": "Aankomen tussen de dennen",
-    "exp.1.d": "Een omsloten kasteelpark, geen doorgaand verkeer, alleen de geur van pijnbomen.",
+    "exp.1.t": "Aankomen in het groen",
+    "exp.1.d": "Een omsloten kasteelpark, geen doorgaand verkeer, alleen bomen en rust om je heen.",
     "exp.2.t": "Het zwembad gaat open",
     "exp.2.d": "Schuif de overkapping weg en het verwarmde privébad ligt in de zon.",
     "exp.3.t": "Binnen en buiten vloeien samen",
@@ -103,7 +103,7 @@ export const t = {
 
     "loc.eyebrow": "Omgeving",
     "loc.title": "Leven als vakantie",
-    "loc.intro": "Stel je voor. Je haalt 's ochtends vers brood in het dorp, en voor de koffie koud is sta je met je voeten in de Atlantische Oceaan. Bij Cap Ferret eet je oesters recht van de kweker. Wie wil beklimt de Dune du Pilat, het hoogste duin van Europa, met niets dan zee en dennenbos eronder. Landinwaarts liggen de wijngaarden, en Bordeaux is dichtbij genoeg voor een avond uit. Tegen zonsondergang ben je terug tussen de pijnbomen, het zwembad nog warm van de dag.",
+    "loc.intro": "Stel je voor. Je haalt 's ochtends vers brood in het dorp, en voor de koffie koud is sta je met je voeten in de Atlantische Oceaan. Bij Cap Ferret eet je oesters recht van de kweker. Wie wil beklimt de Dune du Pilat, het hoogste duin van Europa, met niets dan zee en groen eronder. Landinwaarts liggen de wijngaarden, en Bordeaux is dichtbij genoeg voor een avond uit. Tegen zonsondergang ben je terug in het groen, het zwembad nog warm van de dag.",
     "loc.close": "Je hoeft niet in te pakken. Je bent thuis.",
     "loc.hint": "Tik op een bestemming",
     "loc.km": "km",
@@ -202,8 +202,8 @@ export const t = {
 
     "exp.eyebrow": "Vivre Villa 235",
     "exp.title": "Une journée qui s'apaise lentement",
-    "exp.1.t": "Arriver parmi les pins",
-    "exp.1.d": "Un domaine clos, sans circulation, rien que l'odeur des pins.",
+    "exp.1.t": "Arriver dans la verdure",
+    "exp.1.d": "Un domaine clos, sans circulation, rien que les arbres et le calme autour de vous.",
     "exp.2.t": "La piscine s'ouvre",
     "exp.2.d": "Faites glisser l'abri et le bassin privé chauffé s'offre au soleil.",
     "exp.3.t": "Le dedans et le dehors se rejoignent",
@@ -276,7 +276,7 @@ export const t = {
 
     "loc.eyebrow": "Les environs",
     "loc.title": "Vivre comme en vacances",
-    "loc.intro": "Imaginez. Le matin, vous passez au village chercher le pain, et avant que le café ne refroidisse vous avez les pieds dans l'Atlantique. À Cap Ferret, on achète les huîtres directement chez l'ostréiculteur. Qui veut grimpe la Dune du Pilat, la plus haute d'Europe, avec sous les yeux la mer et la pinède. À l'intérieur des terres s'étendent les vignes, et Bordeaux est assez proche pour une soirée. Au coucher du soleil, vous êtes de retour parmi les pins, la piscine encore tiède.",
+    "loc.intro": "Imaginez. Le matin, vous passez au village chercher le pain, et avant que le café ne refroidisse vous avez les pieds dans l'Atlantique. À Cap Ferret, on achète les huîtres directement chez l'ostréiculteur. Qui veut grimpe la Dune du Pilat, la plus haute d'Europe, avec sous les yeux la mer et la verdure. À l'intérieur des terres s'étendent les vignes, et Bordeaux est assez proche pour une soirée. Au coucher du soleil, vous êtes de retour dans la verdure, la piscine encore tiède.",
     "loc.close": "Rien à remballer. Vous êtes chez vous.",
     "loc.hint": "Touchez une destination",
     "loc.km": "km",
@@ -375,8 +375,8 @@ export const t = {
 
     "exp.eyebrow": "Experience Villa 235",
     "exp.title": "A day that slowly settles",
-    "exp.1.t": "Arrive among the pines",
-    "exp.1.d": "A gated estate, no through traffic, only the scent of pine.",
+    "exp.1.t": "Arrive in the green",
+    "exp.1.d": "A gated estate, no through traffic, only trees and quiet around you.",
     "exp.2.t": "The pool opens up",
     "exp.2.d": "Slide back the cover and the heated private pool lies in the sun.",
     "exp.3.t": "Inside and outside merge",
@@ -449,7 +449,7 @@ export const t = {
 
     "loc.eyebrow": "The area",
     "loc.title": "Living like a holiday",
-    "loc.intro": "Picture it. You drive into the village for fresh bread in the morning, and before the coffee goes cold your feet are in the Atlantic. At Cap Ferret you buy oysters straight from the grower. Climb the Dune du Pilat if you like, the tallest in Europe, with nothing but sea and pine below. Inland lie the vineyards, and Bordeaux is close enough for an evening out. By sunset you are back among the pines, the pool still warm from the day.",
+    "loc.intro": "Picture it. You drive into the village for fresh bread in the morning, and before the coffee goes cold your feet are in the Atlantic. At Cap Ferret you buy oysters straight from the grower. Climb the Dune du Pilat if you like, the tallest in Europe, with nothing but sea and greenery below. Inland lie the vineyards, and Bordeaux is close enough for an evening out. By sunset you are back in the green, the pool still warm from the day.",
     "loc.close": "Nothing to pack. You are home.",
     "loc.hint": "Tap a destination",
     "loc.km": "km",
