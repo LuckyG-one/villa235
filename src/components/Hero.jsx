@@ -1,18 +1,42 @@
+import { useRef, useEffect } from "react";
 import { useI18n } from "../i18n/LanguageContext.jsx";
 import { IMG, VIDEO } from "../data/villa.js";
 
 export default function Hero() {
   const { t } = useI18n();
+  const videoRef = useRef(null);
+
+  // React doesn't reliably set the `muted` DOM property, which makes browsers
+  // (notably Safari) block autoplay. Force it and nudge play() once ready.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    v.defaultMuted = true;
+    const play = () => {
+      const p = v.play();
+      if (p && typeof p.catch === "function") p.catch(() => {});
+    };
+    play();
+    v.addEventListener("canplay", play, { once: true });
+    v.addEventListener("loadeddata", play, { once: true });
+    return () => {
+      v.removeEventListener("canplay", play);
+      v.removeEventListener("loadeddata", play);
+    };
+  }, []);
 
   return (
     <section className="hero" id="top">
       <div className="hero-media">
         <video
+          ref={videoRef}
           className="hero-video"
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
           poster={`${IMG}/hero-poster.jpg`}
         >
           <source src={`${VIDEO}/hero-gevel.mp4`} type="video/mp4" />
