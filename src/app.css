@@ -1237,6 +1237,14 @@
   .nav-cta {
     display: none;
   }
+  /* Touch targets: give thumb-sized tap areas on mobile/tablet. */
+  .lang button {
+    padding: 10px 12px;
+  }
+  .footer-nav a,
+  .footer-contact a {
+    padding-block: 0.45rem;
+  }
   .facts-grid {
     grid-template-columns: 1fr 1fr;
   }
