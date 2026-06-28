@@ -8,6 +8,7 @@ import Story from "./components/Story.jsx";
 import Journey from "./components/Journey.jsx";
 import Floorplan from "./components/Floorplan.jsx";
 import Area from "./components/Area.jsx";
+import ErrorBoundary from "./components/ErrorBoundary.jsx";
 import Park from "./components/Park.jsx";
 import Practical from "./components/Practical.jsx";
 import Split from "./components/Split.jsx";
@@ -31,7 +32,9 @@ export default function App() {
         <Story />
         <Journey />
         <Floorplan />
-        <Area />
+        <ErrorBoundary>
+          <Area />
+        </ErrorBoundary>
         <Park />
         <Practical />
         <Split />

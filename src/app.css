@@ -764,6 +764,21 @@
   letter-spacing: 0.04em;
   color: var(--ink-soft);
 }
+.area-map-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--s-md);
+  background: var(--limestone-deep);
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+.area-map-fallback p {
+  max-width: 28ch;
+}
 .area-side {
   display: flex;
   flex-direction: column;

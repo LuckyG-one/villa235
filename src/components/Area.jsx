@@ -26,19 +26,28 @@ export default function Area() {
   const mapRef = useRef(null);
   const markersRef = useRef({});
   const [active, setActive] = useState("capferret");
+  const [mapFailed, setMapFailed] = useState(false);
 
   useEffect(() => {
     if (mapRef.current || !mapEl.current) return;
 
-    const map = new maplibregl.Map({
-      container: mapEl.current,
-      style: MAP_STYLE,
-      center: [SALLES.lng + 0.1, SALLES.lat],
-      zoom: 7.4,
-      attributionControl: { compact: true },
-      cooperativeGestures: true,
-    });
+    let map;
+    try {
+      map = new maplibregl.Map({
+        container: mapEl.current,
+        style: MAP_STYLE,
+        center: [SALLES.lng + 0.1, SALLES.lat],
+        zoom: 7.4,
+        attributionControl: { compact: true },
+        cooperativeGestures: true,
+      });
+    } catch {
+      // No WebGL / MapLibre unavailable: degrade to the distance list.
+      setMapFailed(true);
+      return;
+    }
     mapRef.current = map;
+    map.on("error", () => {});
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
 
     map.on("load", () => {
@@ -103,7 +112,13 @@ export default function Area() {
 
       <div className="wrap area-grid reveal">
         <div className="area-map-col">
-          <div className="area-map" ref={mapEl} />
+          <div className="area-map" ref={mapEl}>
+            {mapFailed && (
+              <div className="area-map-fallback">
+                <p>{t("loc.maperror")}</p>
+              </div>
+            )}
+          </div>
           <p className="area-map-hint">{t("loc.hint")}</p>
         </div>
 
