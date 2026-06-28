@@ -10,7 +10,7 @@ export default function Contact() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const subject = encodeURIComponent("VILLA235 — bezichtiging / informatie");
+    const subject = encodeURIComponent("Villa 235 · bezichtiging / informatie");
     const body = encodeURIComponent(
       `Naam: ${data.name}\nE-mail: ${data.email}\nTelefoon: ${data.phone}\n\n${data.message}`
     );
