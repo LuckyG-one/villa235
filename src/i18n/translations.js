@@ -51,7 +51,7 @@ export const t = {
     "stats.terrace.v": "Overdekt terras",
     "stats.terrace.l": "Buiten leven, de hele dag",
     "stats.garden.v": "Grote tuin",
-    "stats.garden.l": "Vol privacy, met garage",
+    "stats.garden.l": "Vol privacy en rust",
 
     "story.eyebrow": "Over de villa",
     "story.title": "Een huis om in te landen",
@@ -100,6 +100,7 @@ export const t = {
     "plan.room.bath3": "Gedeelde badkamer",
     "plan.room.pool": "Zwembad",
     "plan.room.garden": "Tuin",
+    "plan.room.berging": "Berging",
 
     "loc.eyebrow": "Omgeving",
     "loc.title": "Leven als vakantie",
@@ -225,7 +226,7 @@ export const t = {
     "stats.terrace.v": "Terrasse couverte",
     "stats.terrace.l": "Vivre dehors, toute la journée",
     "stats.garden.v": "Grand jardin",
-    "stats.garden.l": "En toute intimité, avec garage",
+    "stats.garden.l": "En toute intimité, au calme",
 
     "story.eyebrow": "La villa",
     "story.title": "Une maison où poser ses valises",
@@ -274,6 +275,7 @@ export const t = {
     "plan.room.bath3": "Salle de bain partagée",
     "plan.room.pool": "Piscine",
     "plan.room.garden": "Jardin",
+    "plan.room.berging": "Rangement",
 
     "loc.eyebrow": "Les environs",
     "loc.title": "Vivre comme en vacances",
@@ -399,7 +401,7 @@ export const t = {
     "stats.terrace.v": "Covered terrace",
     "stats.terrace.l": "Outdoor living, all day",
     "stats.garden.v": "Large garden",
-    "stats.garden.l": "Full privacy, with garage",
+    "stats.garden.l": "Full privacy and quiet",
 
     "story.eyebrow": "The villa",
     "story.title": "A house to settle into",
@@ -448,6 +450,7 @@ export const t = {
     "plan.room.bath3": "Shared bathroom",
     "plan.room.pool": "Pool",
     "plan.room.garden": "Garden",
+    "plan.room.berging": "Storage",
 
     "loc.eyebrow": "The area",
     "loc.title": "Living like a holiday",

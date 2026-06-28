@@ -44,11 +44,12 @@ export const floors = [
     id: "ground",
     rooms: [
       { id: "living", img: `${IMG}/woonkamer-overdag.jpg`, shape: "6,6 44,6 44,40 6,40" },
-      { id: "kitchen", img: `${IMG}/keuken-eiland.jpg`, shape: "44,6 74,6 74,22 44,22" },
+      { id: "kitchen", img: `${IMG}/keuken-beneden.jpg`, shape: "44,6 74,6 74,22 44,22" },
       { id: "bed1", img: `${IMG}/slaapkamer-master.jpg`, shape: "44,22 74,22 74,33 44,33" },
       { id: "bath1", img: `${IMG}/badkamer-dubbel.jpg`, shape: "44,33 74,33 74,40 44,40" },
-      { id: "terrace", img: `${IMG}/terras-eettafel.jpg`, shape: "6,40 74,40 74,58 6,58" },
-      { id: "garden", img: `${IMG}/exterieur-tuin.jpg`, shape: "76,6 96,6 96,58 76,58" },
+      { id: "terrace", img: `${IMG}/terras-gedekt.jpg`, shape: "6,40 74,40 74,58 6,58" },
+      { id: "garden", img: `${IMG}/exterieur-tuin.jpg`, shape: "76,6 96,6 96,32 76,32" },
+      { id: "berging", img: `${IMG}/berging.jpg`, shape: "76,34 96,34 96,58 76,58" },
     ],
   },
   {
