@@ -9,6 +9,7 @@ import Journey from "./components/Journey.jsx";
 import Floorplan from "./components/Floorplan.jsx";
 import Area from "./components/Area.jsx";
 import ErrorBoundary from "./components/ErrorBoundary.jsx";
+import Posters from "./components/Posters.jsx";
 import Park from "./components/Park.jsx";
 import Practical from "./components/Practical.jsx";
 import Split from "./components/Split.jsx";
@@ -35,6 +36,7 @@ export default function App() {
         <ErrorBoundary>
           <Area />
         </ErrorBoundary>
+        <Posters />
         <Park />
         <Practical />
         <Split />

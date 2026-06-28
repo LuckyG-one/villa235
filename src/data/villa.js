@@ -84,5 +84,17 @@ export const park = [
   { key: "4" },
 ];
 
+// Vintage travel-posters van de streek (portret). Naam zit in de poster zelf;
+// `name` is alleen voor alt-tekst, `km` is de afstand bij benadering.
+export const posters = [
+  { id: "chateau", name: "Château de Salles", img: `${IMG}/poster-chateau.jpg` },
+  { id: "capferret", name: "Cap Ferret", img: `${IMG}/poster-capferret.jpg`, km: 55 },
+  { id: "pilat", name: "Dune du Pilat", img: `${IMG}/poster-pilat.jpg`, km: 45 },
+  { id: "biscarrosse", name: "Biscarrosse", img: `${IMG}/poster-biscarrosse.jpg`, km: 40 },
+  { id: "bordeaux", name: "Bordeaux", img: `${IMG}/poster-bordeaux.jpg`, km: 50 },
+  { id: "saintemilion", name: "Saint-Émilion", img: `${IMG}/poster-saintemilion.jpg`, km: 80 },
+  { id: "biarritz", name: "Biarritz", img: `${IMG}/poster-biarritz.jpg`, km: 140 },
+];
+
 export const CONTACT_EMAIL = "info@villa235.com";
 export const RENTAL_URL = "https://www.bungalow.net/";

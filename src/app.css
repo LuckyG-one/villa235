@@ -916,6 +916,61 @@
   padding: 6px 12px;
 }
 
+/* ============ POSTERS (region travel posters) ============ */
+.posters {
+  background: var(--limestone);
+  overflow: hidden;
+}
+.posters-head {
+  margin-bottom: var(--s-lg);
+}
+.posters-title {
+  font-size: var(--text-headline);
+  margin-top: 0.6rem;
+}
+.posters-hint {
+  margin-top: 0.8rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+.posters-row {
+  display: flex;
+  gap: clamp(1rem, 2.2vw, 1.8rem);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0.5rem max(1.25rem, (100% - var(--content)) / 2) 1.6rem;
+}
+.posters-row::-webkit-scrollbar {
+  display: none;
+}
+.poster-card {
+  flex: 0 0 auto;
+  width: clamp(218px, 62vw, 300px);
+  margin: 0;
+  scroll-snap-align: start;
+}
+.poster-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+}
+.poster-card:hover img {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
+}
+.poster-km {
+  margin-top: 0.7rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--clay);
+}
+
 /* ============ PARK (dark pine) ============ */
 .park {
   background: var(--pine-deep);

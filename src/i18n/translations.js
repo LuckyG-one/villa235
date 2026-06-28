@@ -124,6 +124,10 @@ export const t = {
     "loc.dest.sansebastian.t": "San Sebastián",
     "loc.dest.sansebastian.d": "Baskische kust en pintxos, net over de Spaanse grens.",
 
+    "posters.eyebrow": "De streek",
+    "posters.title": "De omgeving in posters",
+    "posters.hint": "Veeg langs de mooiste plekken in de buurt",
+
     "park.eyebrow": "Résidence du Château de Salles",
     "park.title": "Een besloten park om in thuis te komen",
     "park.intro": "De villa staat op een afgesloten domein rond een oud château. Stil, groen en privé, met alles voor een vakantie binnen het hek.",
@@ -299,6 +303,10 @@ export const t = {
     "loc.dest.sansebastian.t": "Saint-Sébastien",
     "loc.dest.sansebastian.d": "Côte basque et pintxos, juste de l'autre côté de la frontière.",
 
+    "posters.eyebrow": "La région",
+    "posters.title": "Les environs en affiches",
+    "posters.hint": "Faites défiler les plus beaux lieux des environs",
+
     "park.eyebrow": "Résidence du Château de Salles",
     "park.title": "Un domaine clos où l'on se sent chez soi",
     "park.intro": "La villa se trouve dans un domaine fermé autour d'un ancien château. Calme, verdoyant et privé, avec tout sur place pour les vacances.",
@@ -473,6 +481,10 @@ export const t = {
     "loc.dest.biarritz.d": "Elegant seaside town and cradle of European surfing.",
     "loc.dest.sansebastian.t": "San Sebastián",
     "loc.dest.sansebastian.d": "Basque coast and pintxos, just across the Spanish border.",
+
+    "posters.eyebrow": "The region",
+    "posters.title": "The area in posters",
+    "posters.hint": "Swipe through the finest spots nearby",
 
     "park.eyebrow": "Résidence du Château de Salles",
     "park.title": "A gated estate to come home to",
