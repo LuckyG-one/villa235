@@ -586,6 +586,10 @@
   margin-top: 0.7rem;
   color: var(--ink-soft);
 }
+/* Per-step image: only used on mobile (desktop uses the sticky media column). */
+.journey-step-img {
+  display: none;
+}
 
 /* ============ FLOORPLAN ============ */
 .plan {
@@ -1238,10 +1242,26 @@
     left: 0;
     width: 42%;
   }
+  /* Mobile journey: drop the sticky single image, give each step its own
+     photo above the text so image and caption stay together. */
   .journey-media {
-    position: relative;
-    top: 0;
-    max-width: 460px;
+    display: none;
+  }
+  .journey-step {
+    opacity: 1;
+    padding: clamp(1.6rem, 5vh, 2.5rem) 0;
+  }
+  .journey-step-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--r-md);
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 1.1rem;
+  }
+  .journey-step-num {
+    color: var(--clay);
   }
   .park-features {
     grid-template-columns: 1fr 1fr;

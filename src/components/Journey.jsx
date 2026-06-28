@@ -58,6 +58,12 @@ export default function Journey() {
               ref={(el) => (stepRefs.current[i] = el)}
               className={`journey-step ${active === i ? "is-active" : ""}`}
             >
+              <img
+                className="journey-step-img"
+                src={r.img}
+                alt={t(`journey.${r.key}.t`)}
+                loading="lazy"
+              />
               <span className="journey-step-num">0{i + 1}</span>
               <h3 className="journey-step-title">{t(`journey.${r.key}.t`)}</h3>
               <p className="journey-step-desc">{t(`journey.${r.key}.d`)}</p>
