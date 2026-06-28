@@ -57,7 +57,7 @@ export default function Area() {
       home.innerHTML = `<span></span>`;
       new maplibregl.Marker({ element: home })
         .setLngLat([SALLES.lng, SALLES.lat])
-        .setPopup(new maplibregl.Popup({ offset: 16, closeButton: false }).setText("VILLA235"))
+        .setPopup(new maplibregl.Popup({ offset: 16, closeButton: false }).setText("Villa 235"))
         .addTo(map);
 
       destinations.forEach((d) => {
