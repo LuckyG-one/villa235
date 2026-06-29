@@ -39,27 +39,33 @@ export const journey = [
 
 // Interactieve plattegrond. Twee verdiepingen, klikbare ruimtes (SVG polygonen).
 // coords in een 0..100 x 0..70 grid per verdieping.
+// Indeling volgens de definitieve bouwplannen (Maison Margaux, 01/12/2006):
+// begane grond = serviceblok links, keuken/entree/trap midden, woonkamer rechts,
+// overdekt terras aan de zijkant. Verdieping = 3 slaapkamers + 2 badkamers + overloop.
 export const floors = [
   {
     id: "ground",
     rooms: [
-      { id: "living", img: `${IMG}/woonkamer-overdag.jpg`, shape: "6,6 44,6 44,40 6,40" },
-      { id: "kitchen", img: `${IMG}/keuken-beneden.jpg`, shape: "44,6 74,6 74,22 44,22" },
-      { id: "bed1", img: `${IMG}/slaapkamer-master.jpg`, shape: "44,22 74,22 74,33 44,33" },
-      { id: "bath1", img: `${IMG}/badkamer-dubbel.jpg`, shape: "44,33 74,33 74,40 44,40" },
-      { id: "terrace", img: `${IMG}/terras-gedekt.jpg`, shape: "6,40 74,40 74,58 6,58" },
-      { id: "garden", img: `${IMG}/exterieur-tuin.jpg`, shape: "76,6 96,6 96,32 76,32" },
-      { id: "berging", img: `${IMG}/berging.jpg`, shape: "76,34 96,34 96,58 76,58" },
+      { id: "bed1", img: `${IMG}/slaapkamer-master.jpg`, shape: "5,6 28,6 28,27 5,27" },
+      { id: "bath1", img: `${IMG}/badkamer-dubbel.jpg`, shape: "5,27 28,27 28,40 5,40" },
+      { id: "buanderie", img: `${IMG}/berging.jpg`, shape: "5,40 28,40 28,49 5,49" },
+      { id: "cellier", img: `${IMG}/berging.jpg`, shape: "5,49 18,49 18,58 5,58" },
+      { id: "wc", img: `${IMG}/toilet.jpg`, shape: "18,49 28,49 28,58 18,58" },
+      { id: "kitchen", img: `${IMG}/keuken-beneden.jpg`, shape: "28,6 54,6 54,30 28,30" },
+      { id: "entree", img: `${IMG}/entree.jpg`, shape: "28,30 54,30 54,58 28,58" },
+      { id: "living", img: `${IMG}/woonkamer-overdag.jpg`, shape: "54,6 82,6 82,58 54,58" },
+      { id: "terrace", img: `${IMG}/terras-gedekt.jpg`, shape: "82,6 96,6 96,58 82,58" },
     ],
   },
   {
     id: "first",
     rooms: [
-      { id: "bed2", img: `${IMG}/slaapkamer-twee.jpg`, shape: "6,6 42,6 42,30 6,30" },
-      { id: "bath2", img: `${IMG}/badkamer-wastafels.jpg`, shape: "42,6 62,6 62,30 42,30" },
-      { id: "bed3", img: `${IMG}/slaapkamer-twin.jpg`, shape: "6,32 36,32 36,58 6,58" },
-      { id: "bed4", img: `${IMG}/slaapkamer-twee.jpg`, shape: "36,32 62,32 62,58 36,58" },
-      { id: "bath3", img: `${IMG}/badkamer-dubbel.jpg`, shape: "64,6 90,6 90,58 64,58" },
+      { id: "bath2", img: `${IMG}/badkamer-wastafels.jpg`, shape: "5,6 32,6 32,26 5,26" },
+      { id: "bed4", img: `${IMG}/slaapkamer-twee.jpg`, shape: "5,26 32,26 32,58 5,58" },
+      { id: "bath3", img: `${IMG}/badkamer-dubbel.jpg`, shape: "32,6 58,6 58,30 32,30" },
+      { id: "overloop", img: `${IMG}/overloop.jpg`, shape: "32,30 58,30 58,58 32,58" },
+      { id: "bed2", img: `${IMG}/slaapkamer-twin.jpg`, shape: "58,6 96,6 96,30 58,30" },
+      { id: "bed3", img: `${IMG}/slaapkamer-twee.jpg`, shape: "58,32 96,32 96,58 58,58" },
     ],
   },
 ];
