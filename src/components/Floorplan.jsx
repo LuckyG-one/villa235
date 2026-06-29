@@ -95,6 +95,7 @@ export default function Floorplan() {
             {/* Staircase */}
             {floor.stairs && <Stairs s={floor.stairs} />}
           </svg>
+          <p className="plan-disclaimer">{t("plan.disclaimer")}</p>
         </div>
 
         <aside className="plan-detail">

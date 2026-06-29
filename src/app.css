@@ -642,6 +642,13 @@
   background: var(--limestone-deep);
   border-radius: var(--r-md);
 }
+.plan-disclaimer {
+  margin-top: 0.7rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  opacity: 0.8;
+}
 .plan-outline {
   fill: none;
   stroke: var(--line);
