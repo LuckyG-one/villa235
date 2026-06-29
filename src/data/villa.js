@@ -49,26 +49,29 @@ export const floors = [
   {
     id: "ground",
     rooms: [
-      { id: "bed1", img: `${IMG}/slaapkamer-master.jpg`, dim: "4,24 × 3,25 m", shape: "5,6 28,6 28,27 5,27" },
-      { id: "bath1", img: `${IMG}/badkamer-dubbel.jpg`, shape: "5,27 28,27 28,40 5,40" },
-      { id: "buanderie", img: `${IMG}/berging.jpg`, shape: "5,40 28,40 28,49 5,49" },
-      { id: "cellier", img: `${IMG}/berging.jpg`, dim: "2,19 × 2,06 m", shape: "5,49 18,49 18,58 5,58" },
-      { id: "wc", img: `${IMG}/toilet.jpg`, shape: "18,49 28,49 28,58 18,58" },
-      { id: "kitchen", img: `${IMG}/keuken-beneden.jpg`, shape: "28,6 54,6 54,30 28,30" },
-      { id: "entree", img: `${IMG}/entree.jpg`, shape: "28,30 54,30 54,58 28,58" },
-      { id: "living", img: `${IMG}/woonkamer-overdag.jpg`, shape: "54,6 82,6 82,58 54,58" },
-      { id: "terrace", img: `${IMG}/terras-gedekt.jpg`, shape: "82,6 96,6 96,58 82,58" },
+      { id: "bed1", img: `${IMG}/slaapkamer-master.jpg`, dim: "4,24 × 3,25 m", shape: "5,6 24,6 24,25 5,25" },
+      { id: "bath1", img: `${IMG}/badkamer-dubbel.jpg`, shape: "5,25 24,25 24,36 5,36" },
+      { id: "buanderie", img: `${IMG}/berging.jpg`, shape: "5,36 24,36 24,46 5,46" },
+      { id: "cellier", img: `${IMG}/berging.jpg`, dim: "2,19 × 2,06 m", shape: "5,46 14,46 14,58 5,58" },
+      { id: "wc", img: `${IMG}/toilet.jpg`, shape: "14,46 24,46 24,58 14,58" },
+      { id: "gang", img: `${IMG}/entree.jpg`, shape: "24,6 31,6 31,58 24,58" },
+      { id: "kitchen", img: `${IMG}/keuken-beneden.jpg`, shape: "31,6 56,6 56,28 31,28" },
+      { id: "entree", img: `${IMG}/entree.jpg`, shape: "31,28 56,28 56,58 31,58" },
+      { id: "living", img: `${IMG}/woonkamer-overdag.jpg`, shape: "56,6 84,6 84,58 56,58" },
+      { id: "terrace", img: `${IMG}/terras-gedekt.jpg`, shape: "84,6 96,6 96,58 84,58" },
     ],
+    // Deuren openen op de gang (oostmuur x=24) of de entree.
     doors: [
-      { x: 28, y: 23, w: 5, a: 180, s: -1 }, // slaapkamer 1
-      { x: 28, y: 31, w: 4, a: 180, s: -1 }, // badkamer
-      { x: 28, y: 44.5, w: 4, a: 180, s: -1 }, // wasruimte
-      { x: 12, y: 49, w: 4, a: 90, s: 1 }, // bijkeuken
-      { x: 23, y: 49, w: 3.5, a: 90, s: -1 }, // toilet
+      { x: 24, y: 19, w: 5, a: 180, s: -1 }, // slaapkamer 1 -> gang
+      { x: 24, y: 30, w: 4, a: 180, s: -1 }, // badkamer -> gang
+      { x: 24, y: 41, w: 4, a: 180, s: -1 }, // wasruimte -> gang
+      { x: 24, y: 53, w: 3.5, a: 180, s: -1 }, // toilet -> gang
+      { x: 10, y: 46, w: 4, a: 90, s: 1 }, // bijkeuken -> wasruimte
+      { x: 31, y: 50, w: 4, a: 0, s: 1 }, // gang -> entree
       { x: 45, y: 58, w: 6, a: 270, s: 1 }, // voordeur
     ],
-    sliders: [{ x: 82, y1: 33, y2: 47 }], // woonkamer -> terras
-    stairs: { x: 43, y: 33, w: 9, h: 22, n: 9, dir: "up" },
+    sliders: [{ x: 84, y1: 33, y2: 47 }], // woonkamer -> terras
+    stairs: { x: 42, y: 33, w: 9, h: 22, n: 9, dir: "up" },
   },
   {
     id: "first",

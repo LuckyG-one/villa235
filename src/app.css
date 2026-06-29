@@ -657,6 +657,15 @@
 .plan-room:hover {
   fill: rgba(181, 106, 71, 0.22);
 }
+.plan-room:focus {
+  outline: none;
+}
+.plan-room:focus-visible {
+  outline: none;
+  fill: rgba(181, 106, 71, 0.3);
+  stroke: var(--clay);
+  stroke-width: 0.8;
+}
 .plan-room.is-active {
   fill: rgba(47, 64, 50, 0.78);
   stroke: var(--pine-deep);
