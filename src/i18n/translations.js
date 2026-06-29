@@ -125,8 +125,7 @@ export const t = {
     "loc.dest.sansebastian.d": "Baskische kust en pintxos, net over de Spaanse grens.",
 
     "posters.eyebrow": "De streek",
-    "posters.title": "De omgeving in posters",
-    "posters.hint": "Veeg langs de mooiste plekken in de buurt",
+    "posters.title": "Bijzondere plekken in de omgeving",
 
     "park.eyebrow": "Résidence du Château de Salles",
     "park.title": "Een besloten park om in thuis te komen",
@@ -304,8 +303,7 @@ export const t = {
     "loc.dest.sansebastian.d": "Côte basque et pintxos, juste de l'autre côté de la frontière.",
 
     "posters.eyebrow": "La région",
-    "posters.title": "Les environs en affiches",
-    "posters.hint": "Faites défiler les plus beaux lieux des environs",
+    "posters.title": "Lieux remarquables des environs",
 
     "park.eyebrow": "Résidence du Château de Salles",
     "park.title": "Un domaine clos où l'on se sent chez soi",
@@ -483,8 +481,7 @@ export const t = {
     "loc.dest.sansebastian.d": "Basque coast and pintxos, just across the Spanish border.",
 
     "posters.eyebrow": "The region",
-    "posters.title": "The area in posters",
-    "posters.hint": "Swipe through the finest spots nearby",
+    "posters.title": "Notable places nearby",
 
     "park.eyebrow": "Résidence du Château de Salles",
     "park.title": "A gated estate to come home to",

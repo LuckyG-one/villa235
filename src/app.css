@@ -928,47 +928,86 @@
   font-size: var(--text-headline);
   margin-top: 0.6rem;
 }
-.posters-hint {
-  margin-top: 0.8rem;
-  color: var(--ink-soft);
-  font-size: 0.9rem;
+.posters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(116px, 1fr));
+  gap: clamp(0.9rem, 1.6vw, 1.4rem);
 }
-.posters-row {
+.poster-btn {
   display: flex;
-  gap: clamp(1rem, 2.2vw, 1.8rem);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding: 0.5rem max(1.25rem, (100% - var(--content)) / 2) 1.6rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: center;
 }
-.posters-row::-webkit-scrollbar {
-  display: none;
-}
-.poster-card {
-  flex: 0 0 auto;
-  width: clamp(218px, 62vw, 300px);
-  margin: 0;
-  scroll-snap-align: start;
-}
-.poster-card img {
+.poster-btn img {
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: var(--r-sm);
   box-shadow: var(--shadow-soft);
-  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
 }
-.poster-card:hover img {
-  transform: translateY(-6px);
+.poster-btn:hover img,
+.poster-btn:focus-visible img {
+  transform: translateY(-4px);
   box-shadow: var(--shadow-lift);
 }
-.poster-km {
-  margin-top: 0.7rem;
+.poster-btn-km {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--clay);
+}
+
+/* Lightbox */
+.poster-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  background: rgba(20, 16, 11, 0.82);
+  backdrop-filter: blur(4px);
+  animation: lbFade 0.25s var(--ease);
+  cursor: zoom-out;
+}
+@keyframes lbFade {
+  from {
+    opacity: 0;
+  }
+}
+.poster-lightbox img {
+  max-width: min(90vw, 560px);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow-lift);
+  cursor: default;
+}
+.poster-lightbox-close {
+  position: absolute;
+  top: clamp(1rem, 3vw, 2rem);
+  right: clamp(1rem, 3vw, 2rem);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(244, 237, 225, 0.14);
+  color: var(--limestone);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.25s var(--ease);
+}
+.poster-lightbox-close:hover {
+  background: rgba(244, 237, 225, 0.28);
 }
 
 /* ============ PARK (dark pine) ============ */
