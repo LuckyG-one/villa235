@@ -38,7 +38,7 @@ export default function Journey() {
             {journey.map((r, i) => (
               <img
                 key={r.key}
-                src={r.img}
+                src={r.img.replace(".jpg", "-sm.jpg")}
                 alt={t(`journey.${r.key}.t`)}
                 className={`journey-img ${active === i ? "is-active" : ""}`}
                 loading="lazy"
@@ -60,9 +60,11 @@ export default function Journey() {
             >
               <img
                 className="journey-step-img"
-                src={r.img}
+                src={r.img.replace(".jpg", "-sm.jpg")}
                 alt={t(`journey.${r.key}.t`)}
                 loading="lazy"
+                width="900"
+                height="675"
               />
               <span className="journey-step-num">0{i + 1}</span>
               <h3 className="journey-step-title">{t(`journey.${r.key}.t`)}</h3>
