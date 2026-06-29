@@ -42,31 +42,52 @@ export const journey = [
 // Indeling volgens de definitieve bouwplannen (Maison Margaux, 01/12/2006):
 // begane grond = serviceblok links, keuken/entree/trap midden, woonkamer rechts,
 // overdekt terras aan de zijkant. Verdieping = 3 slaapkamers + 2 badkamers + overloop.
+// Indeling volgens de definitieve bouwplannen (Maison Margaux, 01/12/2006).
+// `dim` = afgelezen maat (m). `doors` = deurzwaai-symbolen { x,y hinge, w leaf,
+// a leaf-hoek in graden, s arc-richting }. `stairs` = traprechthoek met treden.
 export const floors = [
   {
     id: "ground",
     rooms: [
-      { id: "bed1", img: `${IMG}/slaapkamer-master.jpg`, shape: "5,6 28,6 28,27 5,27" },
+      { id: "bed1", img: `${IMG}/slaapkamer-master.jpg`, dim: "4,24 × 3,25 m", shape: "5,6 28,6 28,27 5,27" },
       { id: "bath1", img: `${IMG}/badkamer-dubbel.jpg`, shape: "5,27 28,27 28,40 5,40" },
       { id: "buanderie", img: `${IMG}/berging.jpg`, shape: "5,40 28,40 28,49 5,49" },
-      { id: "cellier", img: `${IMG}/berging.jpg`, shape: "5,49 18,49 18,58 5,58" },
+      { id: "cellier", img: `${IMG}/berging.jpg`, dim: "2,19 × 2,06 m", shape: "5,49 18,49 18,58 5,58" },
       { id: "wc", img: `${IMG}/toilet.jpg`, shape: "18,49 28,49 28,58 18,58" },
       { id: "kitchen", img: `${IMG}/keuken-beneden.jpg`, shape: "28,6 54,6 54,30 28,30" },
       { id: "entree", img: `${IMG}/entree.jpg`, shape: "28,30 54,30 54,58 28,58" },
       { id: "living", img: `${IMG}/woonkamer-overdag.jpg`, shape: "54,6 82,6 82,58 54,58" },
       { id: "terrace", img: `${IMG}/terras-gedekt.jpg`, shape: "82,6 96,6 96,58 82,58" },
     ],
+    doors: [
+      { x: 28, y: 23, w: 5, a: 180, s: -1 }, // slaapkamer 1
+      { x: 28, y: 31, w: 4, a: 180, s: -1 }, // badkamer
+      { x: 28, y: 44.5, w: 4, a: 180, s: -1 }, // wasruimte
+      { x: 12, y: 49, w: 4, a: 90, s: 1 }, // bijkeuken
+      { x: 23, y: 49, w: 3.5, a: 90, s: -1 }, // toilet
+      { x: 45, y: 58, w: 6, a: 270, s: 1 }, // voordeur
+    ],
+    sliders: [{ x: 82, y1: 33, y2: 47 }], // woonkamer -> terras
+    stairs: { x: 43, y: 33, w: 9, h: 22, n: 9, dir: "up" },
   },
   {
     id: "first",
     rooms: [
-      { id: "bath2", img: `${IMG}/badkamer-wastafels.jpg`, shape: "5,6 32,6 32,26 5,26" },
-      { id: "bed4", img: `${IMG}/slaapkamer-twee.jpg`, shape: "5,26 32,26 32,58 5,58" },
-      { id: "bath3", img: `${IMG}/badkamer-dubbel.jpg`, shape: "32,6 58,6 58,30 32,30" },
-      { id: "overloop", img: `${IMG}/overloop.jpg`, shape: "32,30 58,30 58,58 32,58" },
-      { id: "bed2", img: `${IMG}/slaapkamer-twin.jpg`, shape: "58,6 96,6 96,30 58,30" },
-      { id: "bed3", img: `${IMG}/slaapkamer-twee.jpg`, shape: "58,32 96,32 96,58 58,58" },
+      { id: "bath2", img: `${IMG}/badkamer-wastafels.jpg`, shape: "5,6 30,6 30,29 5,29" },
+      { id: "bath3", img: `${IMG}/badkamer-dubbel.jpg`, shape: "30,6 52,6 52,29 30,29" },
+      { id: "bed2", img: `${IMG}/slaapkamer-twin.jpg`, dim: "5,12 × 2,99 m", shape: "52,6 96,6 96,29 52,29" },
+      { id: "bed4", img: `${IMG}/slaapkamer-twee.jpg`, dim: "3,29 × 2,71 m", shape: "5,29 30,29 30,58 5,58" },
+      { id: "overloop", img: `${IMG}/overloop.jpg`, shape: "30,29 52,29 52,58 30,58" },
+      { id: "bed3", img: `${IMG}/slaapkamer-twee.jpg`, dim: "4,09 × 2,81 m", shape: "52,29 96,29 96,58 52,58" },
     ],
+    doors: [
+      { x: 30, y: 43, w: 5, a: 0, s: 1 }, // slaapkamer 4 -> overloop
+      { x: 52, y: 43, w: 5, a: 180, s: -1 }, // slaapkamer 3 -> overloop
+      { x: 41, y: 29, w: 4, a: 270, s: 1 }, // badkamer 3
+      { x: 18, y: 29, w: 4, a: 270, s: -1 }, // badkamer 2 (boven bed4)
+      { x: 55, y: 29, w: 5, a: 270, s: 1 }, // slaapkamer 2
+    ],
+    stairs: { x: 38, y: 33, w: 9, h: 22, n: 9, dir: "down" },
   },
 ];
 

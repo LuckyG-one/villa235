@@ -674,6 +674,57 @@
 .plan-room.is-active + .plan-room-label {
   fill: var(--limestone);
 }
+.plan-room-dim {
+  font-family: var(--font-body);
+  font-size: 1.55px;
+  font-weight: 500;
+  fill: var(--ink-soft);
+  text-anchor: middle;
+  dominant-baseline: middle;
+  pointer-events: none;
+  letter-spacing: 0.02px;
+}
+.plan-room.is-active ~ .plan-room-dim,
+.plan-room.is-active + .plan-room-label + .plan-room-dim {
+  fill: rgba(244, 237, 225, 0.8);
+}
+/* Door swings */
+.plan-door path {
+  stroke: var(--ink-soft);
+  stroke-width: 0.45;
+  fill: none;
+  pointer-events: none;
+}
+/* Sliding door (terrace) */
+.plan-slider line {
+  stroke: var(--ink-soft);
+  stroke-width: 0.55;
+  pointer-events: none;
+}
+/* Staircase */
+.plan-stairs {
+  pointer-events: none;
+}
+.plan-stairs rect {
+  fill: none;
+  stroke: var(--brass);
+  stroke-width: 0.4;
+}
+.plan-stairs line {
+  stroke: var(--brass);
+  stroke-width: 0.35;
+}
+.plan-stair-arrow {
+  stroke: var(--clay);
+  stroke-width: 0.5;
+}
+.plan-detail-dim {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--clay-soft);
+  letter-spacing: 0.02em;
+}
 .plan-detail {
   display: flex;
   flex-direction: column;
