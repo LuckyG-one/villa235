@@ -1426,23 +1426,43 @@
     left: 0;
     width: 42%;
   }
-  /* Mobile journey: drop the sticky single image, give each step its own
-     photo above the text so image and caption stay together. */
-  .journey-media {
-    display: none;
+  /* Mobile journey: sticky photo pinned at the top that swaps as the captions
+     scroll past underneath it (mobile scrollytelling). */
+  .journey-grid {
+    display: block;
   }
-  .journey-step {
-    opacity: 1;
-    padding: clamp(1.6rem, 5vh, 2.5rem) 0;
+  .journey-media {
+    position: sticky;
+    top: 5.5rem;
+    height: 42vh;
+    max-width: none;
+    margin: 0;
+    z-index: 1;
+  }
+  .journey-media-inner {
+    aspect-ratio: auto;
+    height: 100%;
   }
   .journey-step-img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border-radius: var(--r-md);
-    box-shadow: var(--shadow-soft);
-    margin-bottom: 1.1rem;
+    display: none;
+  }
+  .journey-steps {
+    margin-top: 2.5vh;
+  }
+  .journey-step {
+    opacity: 0.4;
+    border-bottom: none;
+    min-height: 58vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 0 6vh;
+  }
+  .journey-step:first-child {
+    min-height: 50vh;
+  }
+  .journey-step.is-active {
+    opacity: 1;
   }
   .journey-step-num {
     color: var(--clay);

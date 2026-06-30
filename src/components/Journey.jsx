@@ -9,6 +9,11 @@ export default function Journey() {
   const stepRefs = useRef([]);
 
   useEffect(() => {
+    // Desktop: step crossing the centre drives the sticky media.
+    // Mobile: the photo is pinned to the top, so the active step is the one
+    // whose caption sits in the lower reading zone.
+    const mobile = window.matchMedia("(max-width: 960px)").matches;
+    const rootMargin = mobile ? "-62% 0px -22% 0px" : "-45% 0px -45% 0px";
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -18,7 +23,7 @@ export default function Journey() {
           }
         });
       },
-      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+      { rootMargin, threshold: 0 }
     );
     stepRefs.current.forEach((n) => n && io.observe(n));
     return () => io.disconnect();
