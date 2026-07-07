@@ -13,12 +13,16 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--s-md);
-  padding-block: 1.1rem;
+  padding-block: clamp(1.3rem, 1.1rem + 0.6vw, 1.7rem);
+  transition: padding-block 0.5s var(--ease);
 }
 .nav.is-scrolled {
   background: rgba(244, 237, 225, 0.86);
   backdrop-filter: blur(14px);
-  box-shadow: 0 1px 0 var(--line);
+  box-shadow: 0 1px 0 var(--line), 0 8px 24px -14px rgba(197, 106, 74, 0.4);
+}
+.nav.is-scrolled .nav-inner {
+  padding-block: 0.85rem;
 }
 .nav-brand {
   display: flex;
@@ -32,15 +36,16 @@
 }
 .nav-brand-mark {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: clamp(1.4rem, 1.3rem + 0.35vw, 1.6rem);
   font-weight: 500;
-  letter-spacing: 0.005em;
+  letter-spacing: -0.008em;
 }
 .nav-brand-sub {
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
+  margin-top: 0.15rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  opacity: 0.85;
+  opacity: 0.8;
 }
 .nav-links {
   display: flex;
@@ -48,8 +53,9 @@
   margin-inline: auto;
 }
 .nav-links a {
-  font-size: 0.9rem;
+  font-size: 0.87rem;
   font-weight: 500;
+  letter-spacing: 0.015em;
   color: var(--limestone);
   opacity: 0.92;
   position: relative;
@@ -178,19 +184,36 @@
   padding-top: 7rem;
 }
 .hero-eyebrow {
-  color: var(--clay-soft);
-  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.7rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--limestone);
+  text-shadow: 0 1px 3px rgba(20, 16, 11, 0.55), 0 8px 20px rgba(20, 16, 11, 0.3);
+}
+.hero-eyebrow-rule {
+  width: 2.5rem;
+  height: 1px;
+  flex-shrink: 0;
+  background: linear-gradient(90deg, var(--clay-soft), transparent);
 }
 .hero-title {
   font-size: var(--text-display);
   line-height: 0.95;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   display: grid;
   gap: 0.05em;
-  text-shadow: 0 2px 30px rgba(20, 16, 11, 0.4);
+  text-wrap: balance;
+  text-shadow: 0 1px 2px rgba(20, 16, 11, 0.4), 0 16px 40px rgba(20, 16, 11, 0.35);
 }
 .hero-title em {
   font-style: italic;
+  font-weight: 500;
   color: var(--clay-soft);
 }
 .hero-tagline {
