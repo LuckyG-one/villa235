@@ -102,8 +102,8 @@ export const destinations = [
   { id: "capferret", lng: -1.2453, lat: 44.6586, km: 55, img: `${IMG}/zwembad-avond.jpg`, hero: true },
   { id: "pilat", lng: -1.2128, lat: 44.5882, km: 45, img: `${IMG}/dest-pilat.jpg` },
   { id: "bordeaux", lng: -0.5792, lat: 44.8378, km: 50, img: `${IMG}/dest-bordeaux.jpg` },
-  { id: "biscarrosse", lng: -1.1656, lat: 44.3942, km: 40, img: `${IMG}/terras-loungers.jpg` },
-  { id: "biarritz", lng: -1.5586, lat: 43.4832, km: 140, img: `${IMG}/zwembad-dag.jpg` },
+  { id: "biscarrosse", lng: -1.1656, lat: 44.3942, km: 40, img: `${IMG}/dest-biscarrosse.jpg` },
+  { id: "biarritz", lng: -1.5586, lat: 43.4832, km: 140, img: `${IMG}/dest-biarritz.jpg` },
   { id: "sansebastian", lng: -1.9812, lat: 43.3183, km: 190, img: `${IMG}/aankomst.jpg` },
 ];
 

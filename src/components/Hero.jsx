@@ -79,7 +79,10 @@ export default function Hero() {
             {t("hero.cta2")}
           </a>
         </div>
-        <p className="hero-price">{t("hero.price")}</p>
+        <p className="hero-price">
+          <span className="hero-price-label">{t("hero.price.l")}</span>
+          <span className="hero-price-value">{t("hero.price.v")}</span>
+        </p>
       </div>
 
       <a href="#experience" className="hero-scroll" aria-label={t("hero.scroll")}>
