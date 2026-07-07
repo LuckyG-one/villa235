@@ -104,7 +104,7 @@ export const destinations = [
   { id: "bordeaux", lng: -0.5792, lat: 44.8378, km: 50, img: `${IMG}/dest-bordeaux.jpg` },
   { id: "biscarrosse", lng: -1.1656, lat: 44.3942, km: 40, img: `${IMG}/dest-biscarrosse.jpg` },
   { id: "biarritz", lng: -1.5586, lat: 43.4832, km: 140, img: `${IMG}/dest-biarritz.jpg` },
-  { id: "sansebastian", lng: -1.9812, lat: 43.3183, km: 190, img: `${IMG}/aankomst.jpg` },
+  { id: "sansebastian", lng: -1.9812, lat: 43.3183, km: 190, img: `${IMG}/dest-sansebastian.jpg` },
 ];
 
 export const park = [
