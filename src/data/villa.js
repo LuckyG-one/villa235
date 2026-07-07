@@ -110,8 +110,8 @@ export const destinations = [
 export const park = [
   { key: "1", img: `${IMG}/park-zwembad.jpg` },
   { key: "2", img: `${IMG}/park-speeltuin.jpg` },
-  { key: "3" },
-  { key: "4", img: `${IMG}/park-bar-salles.jpg` },
+  { key: "3", img: `${IMG}/park-bar-salles.jpg` },
+  { key: "4", img: `${IMG}/park-markt.jpg` },
 ];
 
 // Vintage travel-posters van de streek (portret). Naam zit in de poster zelf;
