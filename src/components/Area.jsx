@@ -124,7 +124,12 @@ export default function Area() {
 
         <div className="area-side">
           <figure className="area-feature">
-            <img src={activeDest.img} alt={t(`loc.dest.${activeDest.id}.t`)} key={activeDest.id} />
+            <img
+              src={activeDest.img}
+              alt={t(`loc.dest.${activeDest.id}.t`)}
+              key={activeDest.id}
+              style={activeDest.imgPos ? { objectPosition: activeDest.imgPos } : undefined}
+            />
             <figcaption>
               <span className="area-feature-km">{activeDest.km} {t("loc.km")}</span>
               <h3>{t(`loc.dest.${activeDest.id}.t`)}</h3>
