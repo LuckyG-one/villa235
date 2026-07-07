@@ -79,9 +79,6 @@ export default function Hero() {
           <a href="#contact" className="btn btn-primary">
             {t("hero.cta1")}
           </a>
-          <a href="#rental" className="btn btn-ghost">
-            {t("hero.cta2")}
-          </a>
         </div>
         <p className="hero-price">
           <span className="hero-price-label">{t("hero.price.l")}</span>
