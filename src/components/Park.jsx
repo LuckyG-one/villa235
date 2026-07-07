@@ -16,10 +16,15 @@ export default function Park() {
         <ul className="park-features">
           {park.map((f, i) => (
             <li
-              className="park-feature reveal"
+              className={`park-feature reveal${f.img ? " park-feature--photo" : ""}`}
               key={f.key}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
+              {f.img && (
+                <div className="park-feature-media">
+                  <img src={f.img} alt={t(`park.${f.key}.t`)} loading="lazy" />
+                </div>
+              )}
               <span className="park-feature-num">0{i + 1}</span>
               <h3>{t(`park.${f.key}.t`)}</h3>
               <p>{t(`park.${f.key}.d`)}</p>

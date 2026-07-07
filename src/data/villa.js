@@ -108,10 +108,10 @@ export const destinations = [
 ];
 
 export const park = [
-  { key: "1" },
+  { key: "1", img: `${IMG}/park-zwembad.jpg` },
   { key: "2" },
   { key: "3" },
-  { key: "4" },
+  { key: "4", img: `${IMG}/park-bar-salles.jpg` },
 ];
 
 // Vintage travel-posters van de streek (portret). Naam zit in de poster zelf;

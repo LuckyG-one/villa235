@@ -19,6 +19,12 @@ export default function Story() {
           <div className="story-block reveal">
             <h3>{t("story.ligging.t")}</h3>
             <p>{t("story.ligging.d")}</p>
+            <img
+              className="story-block-media"
+              src={`${IMG}/kano-eyre.jpg`}
+              alt={t("story.ligging.t")}
+              loading="lazy"
+            />
           </div>
         </div>
 
