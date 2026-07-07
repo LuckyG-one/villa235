@@ -11,6 +11,14 @@ export default function Park() {
           <p className="eyebrow eyebrow--light">{t("park.eyebrow")}</p>
           <h2 className="park-title">{t("park.title")}</h2>
           <p className="park-text">{t("park.intro")}</p>
+          <a
+            className="park-link"
+            href="https://www.residencechateaudesalles.com/nl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t("park.link")} ↗
+          </a>
         </div>
 
         <ul className="park-features">

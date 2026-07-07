@@ -1,6 +1,6 @@
 import { useI18n } from "../i18n/LanguageContext.jsx";
 
-const ITEMS = ["checkin", "checkout", "pool", "comfort", "deposit", "pets", "reg"];
+const ITEMS = ["checkin", "checkout", "pool", "comfort", "ev", "deposit", "pets", "reg"];
 
 export default function Practical() {
   const { t } = useI18n();
