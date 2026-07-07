@@ -1582,11 +1582,49 @@
 }
 .footer-base {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   padding-block: 1.4rem;
   border-top: 1px solid rgba(244, 237, 225, 0.14);
   font-size: 0.78rem;
+}
+.footer-base-legal {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
   opacity: 0.66;
+}
+.rouby-credit {
+  --rouby-pink: #e23368;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 0.82rem;
+  color: var(--limestone);
+  opacity: 0.55;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  flex-shrink: 0;
+}
+.rouby-credit:hover {
+  opacity: 0.9;
+}
+.rouby-credit-label {
+  white-space: nowrap;
+}
+.rouby-logo {
+  display: inline-flex;
+  align-items: center;
+}
+.rouby-word {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  color: var(--limestone);
+}
+.rouby-tld {
+  color: var(--rouby-pink);
 }
 
 /* ============ RESPONSIVE ============ */

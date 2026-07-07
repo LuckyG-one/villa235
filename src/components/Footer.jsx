@@ -1,5 +1,6 @@
 import { useI18n } from "../i18n/LanguageContext.jsx";
 import { CONTACT_EMAIL } from "../data/villa.js";
+import RoubyCredit from "./RoubyCredit.jsx";
 
 const LINKS = [
   ["experience", "#experience"],
@@ -41,8 +42,11 @@ export default function Footer() {
       </div>
 
       <div className="wrap footer-base">
-        <span>© {year} Villa 235</span>
-        <span>{t("footer.rights")}</span>
+        <div className="footer-base-legal">
+          <span>© {year} Villa 235</span>
+          <span>{t("footer.rights")}</span>
+        </div>
+        <RoubyCredit />
       </div>
     </footer>
   );
