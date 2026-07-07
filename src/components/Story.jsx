@@ -35,7 +35,7 @@ export default function Story() {
             loading="lazy"
             style={{ objectPosition: "38% 50%" }}
           />
-          <img className="story-media-inset" src={`${IMG}/aankomst.jpg`} alt="" loading="lazy" />
+          <img className="story-media-inset" src={`${IMG}/tuin-entree.jpg`} alt="" loading="lazy" />
         </figure>
       </div>
     </section>
