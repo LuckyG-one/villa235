@@ -18,10 +18,10 @@ export const t = {
     "nav.cta": "Plan een bezichtiging",
 
     "hero.eyebrow": "Te koop · Résidence du Château de Salles · Gironde",
-    "hero.title1": "Een bijzondere",
+    "hero.title1": "De ruimste",
     "hero.title2": "villa",
-    "hero.title3": "in Zuidwest-Frankrijk",
-    "hero.tagline": "Primair te koop, ook exclusief te huur als vakantievilla.",
+    "hero.title3": "van Château de Salles",
+    "hero.tagline": "Te koop, inclusief inboedel. Tot die tijd te huur als vakantievilla.",
     "hero.price": "Vraagprijs op aanvraag",
     "hero.cta1": "Plan een bezichtiging",
     "hero.cta2": "Bekijk de verhuur",
@@ -35,7 +35,7 @@ export const t = {
     "exp.2.d": "Schuif de overkapping weg en het verwarmde privébad ligt in de zon.",
     "exp.3.t": "Binnen en buiten vloeien samen",
     "exp.3.d": "Van de lichte woonkamer zo het overdekte terras op, de hele dag door.",
-    "exp.4.t": "Geniet van het Zuid-Franse leven",
+    "exp.4.t": "De avond aan de lange tafel",
     "exp.4.d": "Een lange tafel, warme avonden, en Bordeaux op vijftig kilometer.",
 
     "stats.eyebrow": "In het kort",
@@ -163,10 +163,10 @@ export const t = {
     "split.eyebrow": "Het beste van twee werelden",
     "split.title": "Te koop én te huur",
     "split.koop.t": "Te koop",
-    "split.koop.d": "Een solide investering in kwaliteit, locatie en levenskwaliteit. Verkocht inclusief inboedel, met een verhuurbestemming, zodat je de villa verhuurt wanneer je er zelf niet bent.",
+    "split.koop.d": "De villa wordt verkocht inclusief inboedel: wat je koopt staat er al, tot de laatste stoel. De verhuurbestemming betekent dat de villa geld oplevert wanneer je er zelf niet bent.",
     "split.koop.cta": "Plan een bezichtiging",
     "split.huur.t": "Te huur",
-    "split.huur.d": "Exclusief beschikbaar als vakantievilla voor maximaal acht personen, voor een zorgeloze beleving.",
+    "split.huur.d": "De hele villa, met verwarmd privézwembad, voor maximaal acht personen. Geregistreerd als vakantieverhuur onder nummer R33-021743-004.",
     "split.huur.cta": "Bekijk de verhuur",
 
     "contact.eyebrow": "Contact",
@@ -182,7 +182,7 @@ export const t = {
 
     "brand.keywords": "Rust · Zuid-Franse luxe · Familie · Natuur · Betrouwbaarheid · Exclusiviteit · Vrijheid",
 
-    "footer.tag": "Uw thuis. Uw investering. Uw vakantiebestemming.",
+    "footer.tag": "Een huis voor lange zomers. Te koop, en tot die tijd te huur.",
     "footer.nav": "Snel naar",
     "footer.rights": "Alle rechten voorbehouden.",
     "footer.rental": "Verhuur via Bungalownet",
@@ -200,10 +200,10 @@ export const t = {
     "nav.cta": "Planifier une visite",
 
     "hero.eyebrow": "À vendre · Résidence du Château de Salles · Gironde",
-    "hero.title1": "Une villa",
-    "hero.title2": "d'exception",
-    "hero.title3": "dans le Sud-Ouest de la France",
-    "hero.tagline": "À vendre en priorité, aussi en location exclusive comme villa de vacances.",
+    "hero.title1": "La villa",
+    "hero.title2": "la plus spacieuse",
+    "hero.title3": "du Château de Salles",
+    "hero.tagline": "À vendre, meublée. En attendant, à louer comme villa de vacances.",
     "hero.price": "Prix sur demande",
     "hero.cta1": "Planifier une visite",
     "hero.cta2": "Voir la location",
@@ -217,7 +217,7 @@ export const t = {
     "exp.2.d": "Faites glisser l'abri et le bassin privé chauffé s'offre au soleil.",
     "exp.3.t": "Le dedans et le dehors se rejoignent",
     "exp.3.d": "Du séjour lumineux à la terrasse couverte, toute la journée.",
-    "exp.4.t": "Savourer la vie du Sud-Ouest",
+    "exp.4.t": "Le soir à la grande table",
     "exp.4.d": "Une grande table, des soirées douces, Bordeaux à cinquante kilomètres.",
 
     "stats.eyebrow": "En bref",
@@ -345,10 +345,10 @@ export const t = {
     "split.eyebrow": "Le meilleur des deux mondes",
     "split.title": "À vendre et à louer",
     "split.koop.t": "À vendre",
-    "split.koop.d": "Un investissement solide en qualité, emplacement et art de vivre. Vendue meublée, avec une destination locative, pour la louer quand vous n'y êtes pas.",
+    "split.koop.d": "La villa est vendue meublée : ce que vous achetez est déjà là, jusqu'à la dernière chaise. La destination locative signifie que la villa rapporte quand vous n'y êtes pas.",
     "split.koop.cta": "Planifier une visite",
     "split.huur.t": "À louer",
-    "split.huur.d": "Disponible en exclusivité comme villa de vacances pour huit personnes, sans souci.",
+    "split.huur.d": "La villa entière, avec piscine privée chauffée, pour huit personnes au maximum. Enregistrée comme location de vacances sous le numéro R33-021743-004.",
     "split.huur.cta": "Voir la location",
 
     "contact.eyebrow": "Contact",
@@ -364,7 +364,7 @@ export const t = {
 
     "brand.keywords": "Sérénité · Luxe du Sud · Famille · Nature · Confiance · Exclusivité · Liberté",
 
-    "footer.tag": "Votre maison. Votre investissement. Votre destination de vacances.",
+    "footer.tag": "Une maison pour les longs étés. À vendre, et à louer en attendant.",
     "footer.nav": "Accès rapide",
     "footer.rights": "Tous droits réservés.",
     "footer.rental": "Location via Bungalownet",
@@ -382,10 +382,10 @@ export const t = {
     "nav.cta": "Plan a viewing",
 
     "hero.eyebrow": "For sale · Résidence du Château de Salles · Gironde",
-    "hero.title1": "A remarkable",
+    "hero.title1": "The most spacious",
     "hero.title2": "villa",
-    "hero.title3": "in south-west France",
-    "hero.tagline": "Primarily for sale, also exclusively available to rent as a holiday villa.",
+    "hero.title3": "at Château de Salles",
+    "hero.tagline": "For sale, fully furnished. Until then, available to rent as a holiday villa.",
     "hero.price": "Price on request",
     "hero.cta1": "Plan a viewing",
     "hero.cta2": "See the rental",
@@ -399,7 +399,7 @@ export const t = {
     "exp.2.d": "Slide back the cover and the heated private pool lies in the sun.",
     "exp.3.t": "Inside and outside merge",
     "exp.3.d": "From the bright living room straight onto the covered terrace, all day.",
-    "exp.4.t": "Savour life in the south-west",
+    "exp.4.t": "Evenings at the long table",
     "exp.4.d": "A long table, warm evenings, and Bordeaux fifty kilometres away.",
 
     "stats.eyebrow": "At a glance",
@@ -527,10 +527,10 @@ export const t = {
     "split.eyebrow": "The best of both worlds",
     "split.title": "For sale and to rent",
     "split.koop.t": "For sale",
-    "split.koop.d": "A solid investment in quality, location and quality of life. Sold fully furnished, with a rental designation, so you can let it when you are not there yourself.",
+    "split.koop.d": "The villa is sold fully furnished: what you buy is already there, down to the last chair. The rental designation means the villa earns its keep when you are not there yourself.",
     "split.koop.cta": "Plan a viewing",
     "split.huur.t": "To rent",
-    "split.huur.d": "Exclusively available as a holiday villa for up to eight guests, for a carefree stay.",
+    "split.huur.d": "The whole villa, with heated private pool, for up to eight guests. Registered as a holiday rental under number R33-021743-004.",
     "split.huur.cta": "See the rental",
 
     "contact.eyebrow": "Contact",
@@ -546,7 +546,7 @@ export const t = {
 
     "brand.keywords": "Calm · Southern luxury · Family · Nature · Trust · Exclusivity · Freedom",
 
-    "footer.tag": "Your home. Your investment. Your holiday destination.",
+    "footer.tag": "A house for long summers. For sale, and to rent until then.",
     "footer.nav": "Quick links",
     "footer.rights": "All rights reserved.",
     "footer.rental": "Rental via Bungalownet",

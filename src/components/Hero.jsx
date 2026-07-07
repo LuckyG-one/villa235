@@ -53,9 +53,9 @@ export default function Hero() {
           loop
           playsInline
           preload="auto"
-          poster={`${IMG}/hero-poster.jpg`}
+          poster={`${IMG}/hero-poster-dolly.jpg`}
         >
-          <source src={`${VIDEO}/hero-gevel.mp4`} type="video/mp4" />
+          <source src={`${VIDEO}/hero-dolly.mp4`} type="video/mp4" />
         </video>
         <div className="hero-scrim" />
       </div>
