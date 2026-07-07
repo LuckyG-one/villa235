@@ -98,7 +98,7 @@ export const floors = [
 export const SALLES = { lng: -0.8694, lat: 44.5419 };
 
 export const destinations = [
-  { id: "salles", lng: -0.8694, lat: 44.5419, km: 3, img: `${IMG}/exterieur-tuin.jpg` },
+  { id: "salles", lng: -0.8694, lat: 44.5419, km: 3, img: `${IMG}/park-bar-salles.jpg` },
   { id: "capferret", lng: -1.2453, lat: 44.6586, km: 55, img: `${IMG}/dest-capferret.jpg`, imgPos: "50% 15%", hero: true },
   { id: "pilat", lng: -1.2128, lat: 44.5882, km: 45, img: `${IMG}/dest-pilat.jpg` },
   { id: "bordeaux", lng: -0.5792, lat: 44.8378, km: 50, img: `${IMG}/dest-bordeaux.jpg` },
