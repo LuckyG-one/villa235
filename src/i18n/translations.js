@@ -190,7 +190,7 @@ export const t = {
     "split.koop.cta": "Plan een bezichtiging",
     "split.huur.t": "Te huur",
     "split.huur.d": "De hele villa, met verwarmd privézwembad, voor maximaal acht personen. Geregistreerd als vakantieverhuur onder nummer R33-021743-004. Ook buiten het hoogseizoen verhuurt hij goed: in het najaar tijdens de wijnoogst, in het voorjaar als de tuin ontwaakt.",
-    "split.huur.cta": "Bekijk de verhuur",
+    "split.huur.cta": "Vraag naar de verhuur",
 
     "contact.eyebrow": "Contact",
     "contact.title": "Interesse in aankoop?",
@@ -395,7 +395,7 @@ export const t = {
     "split.koop.cta": "Planifier une visite",
     "split.huur.t": "À louer",
     "split.huur.d": "La villa entière, avec piscine privée chauffée, pour huit personnes au maximum. Enregistrée comme location de vacances sous le numéro R33-021743-004. Elle se loue bien aussi hors saison : à l'automne pendant les vendanges, au printemps quand le jardin se réveille.",
-    "split.huur.cta": "Voir la location",
+    "split.huur.cta": "Demander la location",
 
     "contact.eyebrow": "Contact",
     "contact.title": "Intéressé par l'achat ?",
@@ -600,7 +600,7 @@ export const t = {
     "split.koop.cta": "Plan a viewing",
     "split.huur.t": "To rent",
     "split.huur.d": "The whole villa, with heated private pool, for up to eight guests. Registered as a holiday rental under number R33-021743-004. It rents well outside high season too: in autumn during the grape harvest, in spring as the garden wakes up.",
-    "split.huur.cta": "See the rental",
+    "split.huur.cta": "Ask about the rental",
 
     "contact.eyebrow": "Contact",
     "contact.title": "Interested in buying?",

@@ -1,5 +1,5 @@
 import { useI18n } from "../i18n/LanguageContext.jsx";
-import { RENTAL_URL, IMG } from "../data/villa.js";
+import { IMG } from "../data/villa.js";
 
 export default function Split() {
   const { t } = useI18n();
@@ -24,9 +24,7 @@ export default function Split() {
           <div className="split-card-inner">
             <h3>{t("split.huur.t")}</h3>
             <p>{t("split.huur.d")}</p>
-            <a href={RENTAL_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
-              {t("split.huur.cta")}
-            </a>
+            <a href="#contact" className="btn btn-ghost">{t("split.huur.cta")}</a>
           </div>
         </article>
       </div>

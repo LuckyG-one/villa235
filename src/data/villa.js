@@ -127,4 +127,3 @@ export const posters = [
 ];
 
 export const CONTACT_EMAIL = "info@villa235.com";
-export const RENTAL_URL = "https://www.bungalow.net/";
