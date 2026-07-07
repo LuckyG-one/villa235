@@ -415,6 +415,117 @@
   opacity: 0.9;
 }
 
+/* ============ DETAILS ============ */
+.details {
+  background: var(--limestone-deep);
+}
+.details-head {
+  margin-bottom: var(--s-lg);
+}
+.details-title {
+  font-size: var(--text-headline);
+  margin-top: 0.6rem;
+}
+.details-panel {
+  background: var(--limestone);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-soft);
+  padding: clamp(1.8rem, 4vw, 3rem);
+}
+.details-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem clamp(2rem, 5vw, 4rem);
+}
+.details-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid var(--line);
+}
+.details-icon {
+  flex-shrink: 0;
+  color: var(--clay);
+}
+.details-label {
+  color: var(--ink-soft);
+}
+.details-label::after {
+  content: ":";
+}
+.details-value {
+  margin-left: 0.4rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.details-tags {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem clamp(2rem, 5vw, 4rem);
+}
+.details-tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+.details-tag-label {
+  color: var(--ink-soft);
+  margin-right: 0.2rem;
+}
+.details-tag {
+  background: var(--limestone-deep);
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--r-pill);
+}
+.dpe-block {
+  margin-top: 2.2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem clamp(2rem, 5vw, 4rem);
+}
+.dpe-label {
+  display: block;
+  margin-bottom: 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.dpe-bar {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 52px;
+}
+.dpe-seg {
+  flex: 1;
+  height: 55%;
+  border-radius: 3px 3px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dpe-seg.is-active {
+  height: 100%;
+  color: var(--limestone);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-soft);
+}
+
 /* ============ STORY ============ */
 .story {
   background: var(--limestone);
@@ -1453,6 +1564,11 @@
   }
   .facts-grid {
     grid-template-columns: 1fr 1fr;
+  }
+  .details-grid,
+  .details-tags,
+  .dpe-block {
+    grid-template-columns: 1fr;
   }
   .story-grid,
   .journey-grid,

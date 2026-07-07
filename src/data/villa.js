@@ -109,7 +109,7 @@ export const destinations = [
 
 export const park = [
   { key: "1", img: `${IMG}/park-zwembad.jpg` },
-  { key: "2" },
+  { key: "2", img: `${IMG}/park-speeltuin.jpg` },
   { key: "3" },
   { key: "4", img: `${IMG}/park-bar-salles.jpg` },
 ];

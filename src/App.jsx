@@ -4,6 +4,7 @@ import Nav from "./components/Nav.jsx";
 import Hero from "./components/Hero.jsx";
 import Experience from "./components/Experience.jsx";
 import Facts from "./components/Facts.jsx";
+import Details from "./components/Details.jsx";
 import Story from "./components/Story.jsx";
 import Journey from "./components/Journey.jsx";
 import Floorplan from "./components/Floorplan.jsx";
@@ -30,6 +31,7 @@ export default function App() {
         <Hero />
         <Experience />
         <Facts />
+        <Details />
         <Story />
         <Journey />
         <Floorplan />
