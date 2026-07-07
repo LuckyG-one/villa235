@@ -61,6 +61,10 @@ export default function Hero() {
       </div>
 
       <div className="hero-content wrap">
+        <p className="hero-status">
+          <span className="hero-status-dot" aria-hidden="true" />
+          {t("hero.status")}
+        </p>
         <p className="hero-eyebrow">
           <span className="hero-eyebrow-rule" aria-hidden="true" />
           {t("hero.eyebrow")}

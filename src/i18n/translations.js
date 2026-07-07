@@ -17,7 +17,8 @@ export const t = {
     "nav.contact": "Contact",
     "nav.cta": "Plan een bezichtiging",
 
-    "hero.eyebrow": "Te koop · Résidence du Château de Salles · Gironde",
+    "hero.status": "Te koop",
+    "hero.eyebrow": "Résidence du Château de Salles · Gironde",
     "hero.title1": "De mooiste",
     "hero.title2": "vakantievilla",
     "hero.title3": "van Résidence du Château de Salles",
@@ -221,7 +222,8 @@ export const t = {
     "nav.contact": "Contact",
     "nav.cta": "Planifier une visite",
 
-    "hero.eyebrow": "À vendre · Résidence du Château de Salles · Gironde",
+    "hero.status": "À vendre",
+    "hero.eyebrow": "Résidence du Château de Salles · Gironde",
     "hero.title1": "La plus belle",
     "hero.title2": "villa de vacances",
     "hero.title3": "de la Résidence du Château de Salles",
@@ -425,7 +427,8 @@ export const t = {
     "nav.contact": "Contact",
     "nav.cta": "Plan a viewing",
 
-    "hero.eyebrow": "For sale · Résidence du Château de Salles · Gironde",
+    "hero.status": "For sale",
+    "hero.eyebrow": "Résidence du Château de Salles · Gironde",
     "hero.title1": "The most beautiful",
     "hero.title2": "holiday villa",
     "hero.title3": "at Résidence du Château de Salles",
