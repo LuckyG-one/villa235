@@ -29,7 +29,12 @@ export default function Story() {
         </div>
 
         <figure className="story-media reveal">
-          <img src={`${IMG}/woonkamer-avond.jpg`} alt="" loading="lazy" />
+          <img
+            src={`${IMG}/gedekte-tafel-2.jpg`}
+            alt=""
+            loading="lazy"
+            style={{ objectPosition: "38% 50%" }}
+          />
           <img className="story-media-inset" src={`${IMG}/aankomst.jpg`} alt="" loading="lazy" />
         </figure>
       </div>
