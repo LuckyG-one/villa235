@@ -1,76 +1,71 @@
-# Villa 235, publiceren
+# Villa 235, publiceren op TransIP
 
-De site draait nu in de dev-omgeving op Cloudflare Pages (`https://villa235.pages.dev`).
-Zolang dat het live adres is hoeft er niets te veranderen: `npm run build` gebruikt
-standaard dat domein.
+De site draait tijdens de bouw op Cloudflare Pages (`https://villa235.pages.dev`,
+auto-deploy bij elke push). Bij livegang gaat Villa 235 naar **TransIP**.
 
-## Naar het echte domein (TransIP, bijv. villa235.com)
+Villa 235 is een **statische site**: de contactknop is een `mailto`-link, dus er
+is geen server-backend nodig. Het gewone **TransIP WebHosting** (shared) pakket
+volstaat, geen PHP of Node.js nodig. Publiceren is: bouwen met het echte domein
+en de `dist/`-inhoud uploaden.
 
-Alle absolute URL's (canonical, Open Graph, Twitter, JSON-LD, robots.txt, sitemap.xml)
-komen uit **één** waarde: `SITE_URL` in `vite.config.js`. Je hoeft dus niets in de
-HTML of losse bestanden aan te passen.
+## Stap voor stap
 
-1. **Zet het domein.** Kopieer `.env.production.example` naar `.env.production` en
-   vul het echte domein in:
+1. **Domein kiezen.** `villa235.com` of `www.villa235.com`? Kies één canonieke
+   vorm; de andere redirect je (zie de www-regel in `deploy/transip/.htaccess`).
+   Zorg dat `SITE_URL` exact die vorm gebruikt.
 
-   ```
-   SITE_URL=https://villa235.com
-   ```
-
-   (Of eenmalig meegeven: `SITE_URL=https://villa235.com npm run build`.)
-
-2. **Bouwen.**
+2. **Bouwen met het echte domein.** Kopieer `.env.production.example` naar
+   `.env.production` met `SITE_URL=https://villa235.com`, of geef het eenmalig mee:
 
    ```
-   npm run build
+   SITE_URL=https://villa235.com npm run build
    ```
 
    Controleer daarna dat `dist/index.html`, `dist/robots.txt` en `dist/sitemap.xml`
-   het nieuwe domein bevatten en nergens meer `villa235.pages.dev`.
+   het echte domein bevatten en nergens meer `villa235.pages.dev`:
 
-3. **Uploaden naar TransIP.** Zet de **inhoud** van `dist/` in de webroot
-   (`public_html` of `www`). Niet de map `dist` zelf, maar wat erin zit.
-
-4. **Serverconfig (TransIP shared hosting, Apache).** De site is één pagina met
-   in-page (hash) navigatie, dus er is geen SPA-rewrite nodig. Wel handig, een
-   `.htaccess` in de webroot voor HTTPS, compressie en caching:
-
-   ```apache
-   # Forceer HTTPS
-   RewriteEngine On
-   RewriteCond %{HTTPS} off
-   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-   # Compressie
-   <IfModule mod_deflate.c>
-     AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
-   </IfModule>
-
-   # Caching voor gehashte assets
-   <IfModule mod_expires.c>
-     ExpiresActive On
-     ExpiresByType text/css "access plus 1 year"
-     ExpiresByType application/javascript "access plus 1 year"
-     ExpiresByType image/jpeg "access plus 1 month"
-     ExpiresByType image/png "access plus 1 month"
-   </IfModule>
+   ```
+   grep -r "villa235.pages.dev" dist/ && echo "FOUT: nog dev-URLs" || echo "OK"
    ```
 
-5. **DNS / www.** Kies of `www.villa235.com` naar `villa235.com` (of andersom)
-   redirect, zodat er één canoniek adres is. De canonical in de HTML moet naar
-   diezelfde variant wijzen als `SITE_URL`.
+3. **SSL aanzetten.** In het TransIP-controlepaneel bij het webhostingpakket:
+   Let's Encrypt-certificaat aanvragen (gratis) voor het domein. Meestal één klik.
 
-6. **Na livegang.**
+4. **Uploaden naar de webroot.** Via TransIP's Bestandsbeheer in het
+   controlepaneel, of via SFTP (host/gebruiker/wachtwoord staan in het
+   webhosting-overzicht). Zet de **inhoud** van `dist/` in de webroot
+   (`www` of `public_html`), niet de map `dist` zelf. Dus na afloop staat
+   `index.html` direct in de webroot.
+
+5. **`.htaccess` meenemen.** Upload `deploy/transip/.htaccess` naar de webroot,
+   naast `index.html`. Die regelt HTTPS afdwingen, caching op de gehashte assets,
+   security headers en compressie (dat deed Cloudflare eerder automatisch). Kies
+   in dat bestand de gewenste www- of kaal-domein-redirect.
+
+6. **DNS.** Wijs het domein naar het TransIP-pakket (A-record / bij TransIP-domein
+   staat dit vaak al goed). Na propagatie is de site live op het echte domein.
+
+7. **Na livegang controleren.**
    - `https://villa235.com/robots.txt` en `/sitemap.xml` moeten laden.
-   - Sitemap indienen in Google Search Console (property voor het echte domein).
-   - Deel-preview checken via de Facebook Sharing Debugger en de Twitter/X card
-     validator, zodat de OG-afbeelding vers wordt opgehaald.
+   - Sitemap indienen in **Google Search Console** (property voor het echte domein).
+   - Deel-preview verversen via de Facebook Sharing Debugger en de X/Twitter card
+     validator, zodat de OG-afbeelding opnieuw wordt opgehaald.
+   - Hero-video checkt op mobiel (iOS vereist `muted playsInline`, staat al goed).
+
+## Wat wegvalt t.o.v. Cloudflare Pages
+
+- Auto-deploy bij elke `git push`. Op TransIP WebHosting upload je handmatig
+  (of via een eigen SFTP-scriptje). Cloudflare Pages mag als gratis
+  staging/preview blijven draaien naast de TransIP-productie; houd die op
+  `noindex` (staat daar automatisch zolang `SITE_URL` het pages.dev-domein is).
+- Edge-caching/CDN, automatische compressie en HTTPS. Dat regelt de `.htaccess`
+  nu zelf op Apache.
 
 ## Waar staat wat
 
 | Wat | Bron |
 |---|---|
 | Domein (canonical, OG, JSON-LD) | `vite.config.js` -> `SITE_URL`, token `%SITE_URL%` in `index.html` |
-| robots.txt | gegenereerd in `vite.config.js` |
-| sitemap.xml | gegenereerd in `vite.config.js` |
+| robots.txt + sitemap.xml | gegenereerd in `vite.config.js` bij de build |
 | OG-afbeelding (1200x630) | `public/images/og-villa235.jpg` |
+| Apache-config voor TransIP | `deploy/transip/.htaccess` |
