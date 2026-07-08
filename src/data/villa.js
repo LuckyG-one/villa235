@@ -126,7 +126,7 @@ export const posters = [
   { id: "biarritz", name: "Biarritz", img: `${IMG}/poster-biarritz.jpg`, km: 140 },
 ];
 
-export const CONTACT_EMAIL = "interesse@villa235.com";
+export const CONTACT_EMAIL = "contact@villa235.com";
 
 // WhatsApp: wa.me wil het nummer zonder + of spaties. DISPLAY is puur voor tekst.
 export const WHATSAPP_NUMBER = "31654324433";
