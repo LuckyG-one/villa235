@@ -14,11 +14,22 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   const SITE_URL = (env.SITE_URL || 'https://villa235.pages.dev').replace(/\/$/, '')
 
+  // Alleen het echte domein mag in Google/AI-crawlers. De Cloudflare Pages
+  // staging (*.pages.dev, ook de default) blijft noindex + Disallow, zodat de
+  // testversie nooit in de zoekresultaten belandt. Zodra SITE_URL naar het
+  // echte domein wijst (TransIP-build) wordt de site vanzelf indexeerbaar.
+  const INDEXABLE = !/(^|\.)pages\.dev$/.test(new URL(SITE_URL).host)
+
+  const robotsMeta = INDEXABLE
+    ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+    : 'noindex, nofollow'
+
   // The site is a single page; all navigation is in-page (hash based).
   const ROUTES = ['/']
   const lastmod = new Date().toISOString().slice(0, 10)
 
-  const robotsTxt = `# Villa 235, te koop in Residence du Chateau de Salles, Gironde.
+  const robotsTxt = INDEXABLE
+    ? `# Villa 235, te koop in Residence du Chateau de Salles, Gironde.
 # Alles mag geindexeerd worden, inclusief AI- en LLM-crawlers.
 
 User-agent: *
@@ -54,6 +65,10 @@ Allow: /
 
 Sitemap: ${SITE_URL}/sitemap.xml
 `
+    : `# Staging (Cloudflare Pages). Niet indexeren; alleen het echte domein hoort in Google.
+User-agent: *
+Disallow: /
+`
 
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset
@@ -81,7 +96,7 @@ ${ROUTES.map(
       {
         name: 'villa235-site-meta',
         transformIndexHtml(html) {
-          return html.replaceAll('%SITE_URL%', SITE_URL)
+          return html.replaceAll('%SITE_URL%', SITE_URL).replaceAll('%ROBOTS_META%', robotsMeta)
         },
         generateBundle() {
           this.emitFile({ type: 'asset', fileName: 'robots.txt', source: robotsTxt })
