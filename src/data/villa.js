@@ -126,4 +126,4 @@ export const posters = [
   { id: "biarritz", name: "Biarritz", img: `${IMG}/poster-biarritz.jpg`, km: 140 },
 ];
 
-export const CONTACT_EMAIL = "info@villa235.com";
+export const CONTACT_EMAIL = "interesse@villa235.com";
