@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import maplibregl from "maplibre-gl";
 import { useI18n } from "../i18n/LanguageContext.jsx";
 import { destinations, SALLES } from "../data/villa.js";
 
@@ -29,60 +28,93 @@ export default function Area() {
   const [mapFailed, setMapFailed] = useState(false);
 
   useEffect(() => {
-    if (mapRef.current || !mapEl.current) return;
+    const el = mapEl.current;
+    if (!el) return;
 
-    let map;
-    try {
-      map = new maplibregl.Map({
-        container: mapEl.current,
-        style: MAP_STYLE,
-        center: [SALLES.lng + 0.1, SALLES.lat],
-        zoom: 7.4,
-        attributionControl: { compact: true },
-        cooperativeGestures: true,
-      });
-    } catch {
-      // No WebGL / MapLibre unavailable: degrade to the distance list.
-      setMapFailed(true);
-      return;
-    }
-    mapRef.current = map;
-    map.on("error", () => {});
-    map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
+    let cancelled = false;
 
-    map.on("load", () => {
-      // Home marker (villa).
-      const home = document.createElement("div");
-      home.className = "map-home";
-      home.innerHTML = `<span></span>`;
-      new maplibregl.Marker({ element: home })
-        .setLngLat([SALLES.lng, SALLES.lat])
-        .setPopup(new maplibregl.Popup({ offset: 16, closeButton: false }).setText("Villa 235"))
-        .addTo(map);
+    // MapLibre is ~800 kB; only fetch it once the map scrolls near the viewport.
+    const build = async () => {
+      if (mapRef.current || cancelled) return;
 
-      destinations.forEach((d) => {
-        if (d.id === "salles") return;
-        const elm = document.createElement("button");
-        elm.className = `map-pin ${d.hero ? "map-pin--hero" : ""}`;
-        elm.type = "button";
-        elm.setAttribute("aria-label", t(`loc.dest.${d.id}.t`));
-        elm.innerHTML = `<span class="map-pin-dot"></span><span class="map-pin-km">${d.km} km</span>`;
-        elm.addEventListener("click", () => focus(d.id));
-        const marker = new maplibregl.Marker({ element: elm, anchor: "bottom" })
-          .setLngLat([d.lng, d.lat])
+      let maplibregl;
+      try {
+        maplibregl = (await import("maplibre-gl")).default;
+        await import("maplibre-gl/dist/maplibre-gl.css");
+      } catch {
+        setMapFailed(true);
+        return;
+      }
+      if (cancelled) return;
+
+      let map;
+      try {
+        map = new maplibregl.Map({
+          container: el,
+          style: MAP_STYLE,
+          center: [SALLES.lng + 0.1, SALLES.lat],
+          zoom: 7.4,
+          attributionControl: { compact: true },
+          cooperativeGestures: true,
+        });
+      } catch {
+        // No WebGL / MapLibre unavailable: degrade to the distance list.
+        setMapFailed(true);
+        return;
+      }
+      mapRef.current = map;
+      map.on("error", () => {});
+      map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
+
+      map.on("load", () => {
+        // Home marker (villa).
+        const home = document.createElement("div");
+        home.className = "map-home";
+        home.innerHTML = `<span></span>`;
+        new maplibregl.Marker({ element: home })
+          .setLngLat([SALLES.lng, SALLES.lat])
+          .setPopup(new maplibregl.Popup({ offset: 16, closeButton: false }).setText("Villa 235"))
           .addTo(map);
-        markersRef.current[d.id] = marker;
-      });
 
-      const bounds = new maplibregl.LngLatBounds();
-      destinations.forEach((d) => bounds.extend([d.lng, d.lat]));
-      bounds.extend([SALLES.lng, SALLES.lat]);
-      map.fitBounds(bounds, { padding: 70, maxZoom: 8, duration: 0 });
-    });
+        destinations.forEach((d) => {
+          if (d.id === "salles") return;
+          const elm = document.createElement("button");
+          elm.className = `map-pin ${d.hero ? "map-pin--hero" : ""}`;
+          elm.type = "button";
+          elm.setAttribute("aria-label", t(`loc.dest.${d.id}.t`));
+          elm.innerHTML = `<span class="map-pin-dot"></span><span class="map-pin-km">${d.km} km</span>`;
+          elm.addEventListener("click", () => focus(d.id));
+          const marker = new maplibregl.Marker({ element: elm, anchor: "bottom" })
+            .setLngLat([d.lng, d.lat])
+            .addTo(map);
+          markersRef.current[d.id] = marker;
+        });
+
+        const bounds = new maplibregl.LngLatBounds();
+        destinations.forEach((d) => bounds.extend([d.lng, d.lat]));
+        bounds.extend([SALLES.lng, SALLES.lat]);
+        map.fitBounds(bounds, { padding: 70, maxZoom: 8, duration: 0 });
+      });
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          io.disconnect();
+          build();
+        }
+      },
+      { rootMargin: "400px" }
+    );
+    io.observe(el);
 
     return () => {
-      map.remove();
-      mapRef.current = null;
+      cancelled = true;
+      io.disconnect();
+      if (mapRef.current) {
+        mapRef.current.remove();
+        mapRef.current = null;
+      }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
