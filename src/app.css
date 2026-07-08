@@ -1430,6 +1430,33 @@
   color: var(--clay);
   border-bottom: 1px solid currentColor;
 }
+.contact-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--r-pill);
+  background: var(--pine);
+  color: var(--limestone);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  box-shadow: var(--shadow-soft);
+  transition: background var(--dur, 200ms) ease, transform var(--dur, 200ms) ease;
+}
+.contact-whatsapp:hover {
+  background: var(--pine-deep);
+  transform: translateY(-2px);
+}
+.contact-whatsapp-icon {
+  flex: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-whatsapp:hover {
+    transform: none;
+  }
+}
 .contact-form {
   display: grid;
   grid-template-columns: 1fr 1fr;

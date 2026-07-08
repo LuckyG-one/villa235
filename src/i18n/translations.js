@@ -202,6 +202,8 @@ export const t = {
     "contact.message.ph": "Ik ben geïnteresseerd in Villa 235 en zou graag…",
     "contact.send": "Verstuur aanvraag",
     "contact.or": "of mail rechtstreeks naar",
+    "contact.whatsapp": "App ons via WhatsApp",
+    "contact.whatsapp.msg": "Hallo, ik heb interesse in Villa 235 en zou graag meer willen weten.",
 
     "brand.keywords": "Rust · Zuid-Franse luxe · Familie · Natuur · Betrouwbaarheid · Exclusiviteit · Vrijheid",
 
@@ -407,6 +409,8 @@ export const t = {
     "contact.message.ph": "Je suis intéressé par Villa 235 et je souhaiterais…",
     "contact.send": "Envoyer la demande",
     "contact.or": "ou écrivez directement à",
+    "contact.whatsapp": "Écrivez-nous sur WhatsApp",
+    "contact.whatsapp.msg": "Bonjour, je suis intéressé par la Villa 235 et j'aimerais en savoir plus.",
 
     "brand.keywords": "Sérénité · Luxe du Sud · Famille · Nature · Confiance · Exclusivité · Liberté",
 
@@ -612,6 +616,8 @@ export const t = {
     "contact.message.ph": "I'm interested in Villa 235 and would like to…",
     "contact.send": "Send request",
     "contact.or": "or email directly to",
+    "contact.whatsapp": "Message us on WhatsApp",
+    "contact.whatsapp.msg": "Hello, I'm interested in Villa 235 and would like to know more.",
 
     "brand.keywords": "Calm · Southern luxury · Family · Nature · Trust · Exclusivity · Freedom",
 

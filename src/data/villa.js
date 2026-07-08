@@ -127,3 +127,7 @@ export const posters = [
 ];
 
 export const CONTACT_EMAIL = "interesse@villa235.com";
+
+// WhatsApp: wa.me wil het nummer zonder + of spaties. DISPLAY is puur voor tekst.
+export const WHATSAPP_NUMBER = "31654324433";
+export const WHATSAPP_DISPLAY = "+31 6 54 32 44 33";

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useI18n } from "../i18n/LanguageContext.jsx";
-import { CONTACT_EMAIL } from "../data/villa.js";
+import { CONTACT_EMAIL, WHATSAPP_NUMBER } from "../data/villa.js";
+import { WhatsAppIcon } from "./icons.jsx";
 
 export default function Contact() {
   const { t } = useI18n();
@@ -28,6 +29,15 @@ export default function Contact() {
             {t("contact.or")}{" "}
             <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           </p>
+          <a
+            className="contact-whatsapp"
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(t("contact.whatsapp.msg"))}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <WhatsAppIcon className="contact-whatsapp-icon" />
+            <span>{t("contact.whatsapp")}</span>
+          </a>
         </div>
 
         <form className="contact-form reveal" onSubmit={onSubmit}>
