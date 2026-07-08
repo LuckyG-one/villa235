@@ -1,13 +1,28 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useI18n } from "../i18n/LanguageContext.jsx";
 import { CONTACT_EMAIL, WHATSAPP_NUMBER } from "../data/villa.js";
 import { WhatsAppIcon } from "./icons.jsx";
 
+// Concrete redenen om contact te leggen. De koper vraagt aan, wij sturen op maat.
+const REQUESTS = ["dossier", "rental", "costs", "reviews"];
+
 export default function Contact() {
   const { t } = useI18n();
   const [data, setData] = useState({ name: "", email: "", phone: "", message: "" });
+  const messageRef = useRef(null);
 
   const onChange = (e) => setData((d) => ({ ...d, [e.target.name]: e.target.value }));
+
+  const requestInfo = (key) => {
+    const item = t(`contact.req.${key}`);
+    const lower = item.charAt(0).toLowerCase() + item.slice(1);
+    setData((d) => ({ ...d, message: t("contact.req.prefill").replace("{item}", lower) }));
+    const ta = messageRef.current;
+    if (ta) {
+      ta.focus();
+      ta.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -25,6 +40,23 @@ export default function Contact() {
           <p className="eyebrow">{t("contact.eyebrow")}</p>
           <h2 className="contact-title">{t("contact.title")}</h2>
           <p className="contact-text">{t("contact.text")}</p>
+
+          <div className="contact-requests">
+            <p className="contact-requests-title">{t("contact.requests.title")}</p>
+            <div className="contact-requests-list">
+              {REQUESTS.map((key) => (
+                <button
+                  type="button"
+                  key={key}
+                  className="contact-chip"
+                  onClick={() => requestInfo(key)}
+                >
+                  {t(`contact.req.${key}`)}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <p className="contact-direct">
             {t("contact.or")}{" "}
             <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
@@ -56,6 +88,7 @@ export default function Contact() {
           <label className="field">
             <span>{t("contact.message")}</span>
             <textarea
+              ref={messageRef}
               name="message"
               rows="4"
               value={data.message}

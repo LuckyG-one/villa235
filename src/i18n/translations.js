@@ -204,6 +204,12 @@ export const t = {
     "contact.or": "of mail rechtstreeks naar",
     "contact.whatsapp": "App ons via WhatsApp",
     "contact.whatsapp.msg": "Hallo, ik heb interesse in Villa 235 en zou graag meer willen weten.",
+    "contact.requests.title": "Vraag vrijblijvend aan",
+    "contact.req.dossier": "Het volledige verkoopdossier",
+    "contact.req.rental": "Verhuurcijfers en rendement",
+    "contact.req.costs": "Overzicht van alle kosten",
+    "contact.req.reviews": "Ervaringen van eerdere gasten",
+    "contact.req.prefill": "Ik ontvang graag meer informatie over: {item}.",
 
     "brand.keywords": "Rust · Zuid-Franse luxe · Familie · Natuur · Betrouwbaarheid · Exclusiviteit · Vrijheid",
 
@@ -411,6 +417,12 @@ export const t = {
     "contact.or": "ou écrivez directement à",
     "contact.whatsapp": "Écrivez-nous sur WhatsApp",
     "contact.whatsapp.msg": "Bonjour, je suis intéressé par la Villa 235 et j'aimerais en savoir plus.",
+    "contact.requests.title": "Demandez sans engagement",
+    "contact.req.dossier": "Le dossier de vente complet",
+    "contact.req.rental": "Les revenus locatifs et le rendement",
+    "contact.req.costs": "Le détail de tous les frais",
+    "contact.req.reviews": "Les avis d'anciens locataires",
+    "contact.req.prefill": "Je souhaite recevoir plus d'informations sur : {item}.",
 
     "brand.keywords": "Sérénité · Luxe du Sud · Famille · Nature · Confiance · Exclusivité · Liberté",
 
@@ -618,6 +630,12 @@ export const t = {
     "contact.or": "or email directly to",
     "contact.whatsapp": "Message us on WhatsApp",
     "contact.whatsapp.msg": "Hello, I'm interested in Villa 235 and would like to know more.",
+    "contact.requests.title": "Request without obligation",
+    "contact.req.dossier": "The full sales dossier",
+    "contact.req.rental": "Rental figures and returns",
+    "contact.req.costs": "A breakdown of all costs",
+    "contact.req.reviews": "Reviews from past guests",
+    "contact.req.prefill": "I'd like to receive more information about: {item}.",
 
     "brand.keywords": "Calm · Southern luxury · Family · Nature · Trust · Exclusivity · Freedom",
 

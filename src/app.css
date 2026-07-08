@@ -1422,6 +1422,49 @@
   margin-top: 1rem;
   color: var(--ink-soft);
 }
+.contact-requests {
+  margin-top: 2rem;
+}
+.contact-requests-title {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.9rem;
+}
+.contact-requests-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.contact-chip {
+  padding: 0.55rem 1rem;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--limestone-deep);
+  background: transparent;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--dur, 200ms) ease, border-color var(--dur, 200ms) ease,
+    color var(--dur, 200ms) ease, transform var(--dur, 200ms) ease;
+}
+.contact-chip:hover {
+  background: var(--pine);
+  border-color: var(--pine);
+  color: var(--limestone);
+  transform: translateY(-2px);
+}
+.contact-chip:focus-visible {
+  outline: 2px solid var(--pine);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-chip:hover {
+    transform: none;
+  }
+}
 .contact-direct {
   margin-top: 1.4rem;
   font-size: 0.95rem;
