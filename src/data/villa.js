@@ -97,13 +97,15 @@ export const floors = [
 // Omgeving — pins op de kaart. lng/lat (WGS84), afstand bij benadering.
 export const SALLES = { lng: -0.8694, lat: 44.5419 };
 
+// Elke bestemming heeft een echte foto (img, groot in de feature-card) en waar
+// beschikbaar een vintage reisposter (poster, als ingelijst souvenir ernaast).
 export const destinations = [
   { id: "salles", lng: -0.8694, lat: 44.5419, km: 3, img: `${IMG}/park-bar-salles.jpg` },
-  { id: "capferret", lng: -1.2453, lat: 44.6586, km: 55, img: `${IMG}/dest-capferret.jpg`, imgPos: "50% 15%", hero: true },
-  { id: "pilat", lng: -1.2128, lat: 44.5882, km: 45, img: `${IMG}/dest-pilat.jpg` },
-  { id: "bordeaux", lng: -0.5792, lat: 44.8378, km: 50, img: `${IMG}/dest-bordeaux.jpg` },
-  { id: "biscarrosse", lng: -1.1656, lat: 44.3942, km: 40, img: `${IMG}/dest-biscarrosse.jpg` },
-  { id: "biarritz", lng: -1.5586, lat: 43.4832, km: 140, img: `${IMG}/dest-biarritz.jpg` },
+  { id: "capferret", lng: -1.2453, lat: 44.6586, km: 55, img: `${IMG}/dest-capferret.jpg`, imgPos: "50% 15%", hero: true, poster: `${IMG}/poster-capferret.jpg` },
+  { id: "pilat", lng: -1.2128, lat: 44.5882, km: 45, img: `${IMG}/dest-pilat.jpg`, poster: `${IMG}/poster-pilat.jpg` },
+  { id: "bordeaux", lng: -0.5792, lat: 44.8378, km: 50, img: `${IMG}/dest-bordeaux.jpg`, poster: `${IMG}/poster-bordeaux.jpg` },
+  { id: "biscarrosse", lng: -1.1656, lat: 44.3942, km: 40, img: `${IMG}/dest-biscarrosse.jpg`, poster: `${IMG}/poster-biscarrosse.jpg` },
+  { id: "biarritz", lng: -1.5586, lat: 43.4832, km: 140, img: `${IMG}/dest-biarritz.jpg`, poster: `${IMG}/poster-biarritz.jpg` },
   { id: "sansebastian", lng: -1.9812, lat: 43.3183, km: 190, img: `${IMG}/dest-sansebastian.jpg` },
 ];
 
@@ -112,18 +114,6 @@ export const park = [
   { key: "2", img: `${IMG}/park-speeltuin.jpg` },
   { key: "3", img: `${IMG}/park-bar-salles.jpg` },
   { key: "4", img: `${IMG}/park-markt.jpg` },
-];
-
-// Vintage travel-posters van de streek (portret). Naam zit in de poster zelf;
-// `name` is alleen voor alt-tekst, `km` is de afstand bij benadering.
-export const posters = [
-  { id: "chateau", name: "Château de Salles", img: `${IMG}/poster-chateau.jpg` },
-  { id: "capferret", name: "Cap Ferret", img: `${IMG}/poster-capferret.jpg`, km: 55 },
-  { id: "pilat", name: "Dune du Pilat", img: `${IMG}/poster-pilat.jpg`, km: 45 },
-  { id: "biscarrosse", name: "Biscarrosse", img: `${IMG}/poster-biscarrosse.jpg`, km: 40 },
-  { id: "bordeaux", name: "Bordeaux", img: `${IMG}/poster-bordeaux.jpg`, km: 50 },
-  { id: "saintemilion", name: "Saint-Émilion", img: `${IMG}/poster-saintemilion.jpg`, km: 80 },
-  { id: "biarritz", name: "Biarritz", img: `${IMG}/poster-biarritz.jpg`, km: 140 },
 ];
 
 export const CONTACT_EMAIL = "contact@villa235.com";

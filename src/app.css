@@ -1045,15 +1045,17 @@
 .area-feature {
   margin: 0;
   border-radius: var(--r-md);
-  overflow: hidden;
+  /* visible zodat het gepinde poster-souvenir uit de hoek mag steken */
+  overflow: visible;
   position: relative;
   box-shadow: var(--shadow-soft);
   background: var(--ink);
 }
-.area-feature img {
+.area-feature > img {
   width: 100%;
   height: 230px;
   object-fit: cover;
+  border-radius: var(--r-md);
   animation: fadeImg 0.6s var(--ease);
 }
 .area-feature figcaption {
@@ -1062,6 +1064,7 @@
   padding: var(--s-md);
   color: var(--limestone);
   background: linear-gradient(to top, rgba(20, 16, 11, 0.9), transparent);
+  border-radius: 0 0 var(--r-md) var(--r-md);
 }
 .area-feature-km {
   font-family: var(--font-display);
@@ -1077,6 +1080,59 @@
   margin-top: 0.4rem;
   font-size: 0.9rem;
   opacity: 0.92;
+}
+/* Vintage reisposter als gepind souvenir, hangend in de rechterbovenhoek.
+   Steekt met een punaise omhoog/naar buiten, zodat het nauwelijks over de
+   fototekst valt. De feature staat op overflow:visible zodat dit mag uitsteken. */
+.area-feature-poster {
+  position: absolute;
+  top: -18px;
+  right: -12px;
+  z-index: 3;
+  width: clamp(66px, 22%, 98px);
+  aspect-ratio: 3 / 4;
+  padding: 5px 5px 7px;
+  border: none;
+  background: var(--limestone);
+  border-radius: 2px;
+  box-shadow: 0 12px 24px -10px rgba(20, 16, 11, 0.6), 0 2px 6px rgba(20, 16, 11, 0.35);
+  transform: rotate(4deg);
+  transform-origin: top center;
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+  cursor: pointer;
+}
+/* de punaise */
+.area-feature-poster::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 13px;
+  height: 13px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, #eda88f, var(--clay) 58%, #90391f);
+  box-shadow: 0 2px 3px rgba(20, 16, 11, 0.5), inset 0 -1px 2px rgba(20, 16, 11, 0.25);
+  z-index: 1;
+}
+.area-feature-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1px;
+  display: block;
+  animation: none;
+}
+.area-feature-poster:hover,
+.area-feature-poster:focus-visible {
+  transform: rotate(1deg) scale(1.06);
+  box-shadow: 0 18px 30px -10px rgba(20, 16, 11, 0.65), 0 3px 8px rgba(20, 16, 11, 0.4);
+}
+@media (prefers-reduced-motion: reduce) {
+  .area-feature-poster:hover,
+  .area-feature-poster:focus-visible {
+    transform: rotate(4deg);
+  }
 }
 .area-list {
   list-style: none;

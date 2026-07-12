@@ -26,6 +26,14 @@ export default function Area() {
   const markersRef = useRef({});
   const [active, setActive] = useState("capferret");
   const [mapFailed, setMapFailed] = useState(false);
+  const [posterOpen, setPosterOpen] = useState(null);
+
+  useEffect(() => {
+    if (!posterOpen) return;
+    const onKey = (e) => e.key === "Escape" && setPosterOpen(null);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [posterOpen]);
 
   useEffect(() => {
     const el = mapEl.current;
@@ -167,6 +175,16 @@ export default function Area() {
               <h3>{t(`loc.dest.${activeDest.id}.t`)}</h3>
               <p>{t(`loc.dest.${activeDest.id}.d`)}</p>
             </figcaption>
+            {activeDest.poster && (
+              <button
+                type="button"
+                className="area-feature-poster"
+                onClick={() => setPosterOpen(activeDest.poster)}
+                aria-label={`${t(`loc.dest.${activeDest.id}.t`)} — ${t("loc.poster")}`}
+              >
+                <img src={activeDest.poster} alt="" key={activeDest.id} loading="lazy" />
+              </button>
+            )}
           </figure>
 
           <ul className="area-list">
@@ -186,6 +204,21 @@ export default function Area() {
           </ul>
         </div>
       </div>
+
+      {posterOpen && (
+        <div
+          className="poster-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={t("loc.poster")}
+          onClick={() => setPosterOpen(null)}
+        >
+          <button className="poster-lightbox-close" aria-label={t("loc.close.aria")} onClick={() => setPosterOpen(null)}>
+            ×
+          </button>
+          <img src={posterOpen} alt="" onClick={(e) => e.stopPropagation()} />
+        </div>
+      )}
     </section>
   );
 }
