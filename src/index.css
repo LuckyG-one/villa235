@@ -188,6 +188,14 @@ button {
   background: rgba(47, 64, 50, 0.04);
 }
 
+/* Consistente keyboard-focus ring. :where() houdt specificity 0, dus
+   per-element focus-stijlen (formuliervelden, plattegrond, posters,
+   contact-chips) blijven winnen. Terracotta valt op zowel licht als donker. */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 3px;
+}
+
 /* Reveal animation default state (JS adds .is-in) */
 .reveal {
   opacity: 0;
