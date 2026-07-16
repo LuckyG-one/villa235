@@ -23,6 +23,11 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^www\.villa235\.com$ [NC]
 RewriteRule ^ https://villa235.com%{REQUEST_URI} [L,R=301]
 
+# --- Eigen 404-pagina ------------------------------------------------
+# Onbekende URL's tonen de 404 in huisstijl (met echte 404-status, geen
+# soft-404 redirect naar de homepage).
+ErrorDocument 404 /404.html
+
 # --- Cache-Control op de gehashte build-assets -----------------------
 # Vite hasht alles onder /assets/ per inhoud, dus een jaar cachen is veilig.
 <IfModule mod_expires.c>
