@@ -10,22 +10,18 @@
 # de inhoud van dist/). Vereist mod_rewrite, mod_headers, mod_expires en
 # mod_deflate; die staan op TransIP WebHosting standaard aan.
 
-# --- HTTPS afdwingen -------------------------------------------------
+# --- HTTPS afdwingen (proxy-veilig) ----------------------------------
+# TransIP forceert HTTPS al op hun proxy; deze regel is een vangnet en checkt
+# ook X-Forwarded-Proto, zodat er GEEN redirect-loop ontstaat achter de
+# SSL-terminerende proxy (waar %{HTTPS} 'off' kan lezen op een https-verzoek).
 RewriteEngine On
 RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# --- Optioneel: kaal domein naar www (of andersom) -------------------
-# Kies EEN canonieke vorm die overeenkomt met SITE_URL in de build.
-# Standaard uit; haal het commentaar weg voor de gewenste variant.
-#
-# Kaal -> www:
-# RewriteCond %{HTTP_HOST} ^villa235\.com$ [NC]
-# RewriteRule ^ https://www.villa235.com%{REQUEST_URI} [L,R=301]
-#
-# www -> kaal:
-# RewriteCond %{HTTP_HOST} ^www\.villa235\.com$ [NC]
-# RewriteRule ^ https://villa235.com%{REQUEST_URI} [L,R=301]
+# --- www -> kaal (canoniek = kaal villa235.com) ----------------------
+RewriteCond %{HTTP_HOST} ^www\.villa235\.com$ [NC]
+RewriteRule ^ https://villa235.com%{REQUEST_URI} [L,R=301]
 
 # --- Cache-Control op de gehashte build-assets -----------------------
 # Vite hasht alles onder /assets/ per inhoud, dus een jaar cachen is veilig.
