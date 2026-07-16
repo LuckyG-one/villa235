@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Villa 235">
+  <rect width="512" height="512" rx="112" fill="#6B1A24"/>
+  <!-- schoorsteen -->
+  <rect x="322" y="150" width="30" height="86" fill="#F5F1E8"/>
+  <!-- dak -->
+  <path d="M256 120 L92 272 L420 272 Z" fill="#F5F1E8"/>
+  <!-- huis -->
+  <rect x="146" y="260" width="220" height="152" rx="6" fill="#F5F1E8"/>
+  <!-- deur (bordeaux uitsparing) -->
+  <path d="M232 412 v-72 a24 24 0 0 1 48 0 v72 Z" fill="#6B1A24"/>
+  <!-- raampje -->
+  <rect x="296" y="300" width="40" height="40" rx="4" fill="#6B1A24"/>
+</svg>
