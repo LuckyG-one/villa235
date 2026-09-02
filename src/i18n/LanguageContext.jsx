@@ -3,22 +3,27 @@ import { t as dictionary, LANGS } from "./translations.js";
 
 const LanguageContext = createContext(null);
 
-function detectInitial() {
-  if (typeof navigator === "undefined") return "nl";
-  const stored = typeof localStorage !== "undefined" && localStorage.getItem("villa235.lang");
-  if (stored && dictionary[stored]) return stored;
-  const nav = (navigator.language || "nl").slice(0, 2).toLowerCase();
-  return dictionary[nav] ? nav : "nl";
+// Elke taal heeft een eigen, geprerenderde URL: "/" = nl, "/fr/", "/en/".
+// De URL is de enige bron van waarheid voor de taal, zodat server-render en
+// client-hydration altijd hetzelfde opleveren (geen mismatch) en zoekmachines
+// elke taal op een eigen adres kunnen indexeren (hreflang).
+const PATHS = { nl: "/", fr: "/fr/", en: "/en/" };
+
+export function langFromPath(pathname = "/") {
+  const seg = pathname.split("/")[1];
+  return seg && dictionary[seg] ? seg : "nl";
 }
 
-export function LanguageProvider({ children }) {
-  const [lang, setLangState] = useState(detectInitial);
+export function LanguageProvider({ initialLang = "nl", children }) {
+  const [lang, setLangState] = useState(initialLang);
 
   const setLang = useCallback((next) => {
     if (!dictionary[next]) return;
     setLangState(next);
-    if (typeof localStorage !== "undefined") localStorage.setItem("villa235.lang", next);
     if (typeof document !== "undefined") document.documentElement.lang = next;
+    if (typeof history !== "undefined" && typeof window !== "undefined") {
+      history.replaceState(null, "", PATHS[next] + window.location.hash);
+    }
   }, []);
 
   const t = useCallback(

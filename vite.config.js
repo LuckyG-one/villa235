@@ -10,7 +10,7 @@ import react from '@vitejs/plugin-react'
 // index.html uses the %SITE_URL% token; robots.txt and sitemap.xml are generated
 // below. Change the origin in ONE place and everything follows.
 // https://vite.dev/config/
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode, isSsrBuild }) => {
   const env = loadEnv(mode, process.cwd(), '')
   const SITE_URL = (env.SITE_URL || 'https://villa235.pages.dev').replace(/\/$/, '')
 
@@ -24,9 +24,19 @@ export default defineConfig(({ mode }) => {
     ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
     : 'noindex, nofollow'
 
-  // The site is a single page; all navigation is in-page (hash based).
-  const ROUTES = ['/']
+  // Een pagina per taal, geprerenderd door scripts/prerender.mjs (alle
+  // navigatie binnen de pagina is hash-based). Elke URL krijgt in de sitemap
+  // hreflang-alternates naar de andere talen.
+  const ROUTES = [
+    { path: '/', lang: 'nl' },
+    { path: '/fr/', lang: 'fr' },
+    { path: '/en/', lang: 'en' },
+  ]
   const lastmod = new Date().toISOString().slice(0, 10)
+  const alternates =
+    ROUTES.map(
+      (r) => `    <xhtml:link rel="alternate" hreflang="${r.lang}" href="${SITE_URL}${r.path}" />`
+    ).join('\n') + `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/" />`
 
   const robotsTxt = INDEXABLE
     ? `# Villa 235, te koop in Residence du Chateau de Salles, Gironde.
@@ -73,13 +83,15 @@ Disallow: /
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${ROUTES.map(
-    (route) => `  <url>
-    <loc>${SITE_URL}${route}</loc>
+    (r) => `  <url>
+    <loc>${SITE_URL}${r.path}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>${r.lang === 'nl' ? '1.0' : '0.9'}</priority>
+${alternates}
     <image:image>
       <image:loc>${SITE_URL}/images/og-villa235.jpg</image:loc>
       <image:title>Villa 235 met verwarmd privezwembad, Residence du Chateau de Salles</image:title>
@@ -89,16 +101,27 @@ ${ROUTES.map(
 </urlset>
 `
 
+  // De SSR-build (server-bundle voor de prerender) hoort geen robots/sitemap
+  // uit te schrijven; alleen de client-build. Closure-variabele, want `this`
+  // in plugin-hooks is de bundler-context, niet het plugin-object.
+  let ssrBuild = false
+
   return {
     base: '/',
+    // De SSR-bundle heeft de 40 MB aan foto's/video uit public/ niet nodig.
+    build: { copyPublicDir: !isSsrBuild },
     plugins: [
       react(),
       {
         name: 'villa235-site-meta',
+        configResolved(config) {
+          ssrBuild = !!config.build.ssr
+        },
         transformIndexHtml(html) {
           return html.replaceAll('%SITE_URL%', SITE_URL).replaceAll('%ROBOTS_META%', robotsMeta)
         },
         generateBundle() {
+          if (ssrBuild) return
           this.emitFile({ type: 'asset', fileName: 'robots.txt', source: robotsTxt })
           this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemapXml })
         },

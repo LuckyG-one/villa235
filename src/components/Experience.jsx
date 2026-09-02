@@ -5,7 +5,9 @@ import { useI18n } from "../i18n/LanguageContext.jsx";
 import { experience } from "../data/villa.js";
 import { prefersReducedMotion } from "../hooks/useReveal.js";
 
-gsap.registerPlugin(ScrollTrigger);
+// Alleen in de browser registreren; tijdens de build-time prerender (Node)
+// bestaat er geen window en draait het scroll-effect sowieso niet.
+if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
 export default function Experience() {
   const { t, lang } = useI18n();

@@ -1,13 +1,25 @@
 import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
-import { LanguageProvider } from "./i18n/LanguageContext.jsx";
+import { LanguageProvider, langFromPath } from "./i18n/LanguageContext.jsx";
 
-createRoot(document.getElementById("root")).render(
+const initialLang = langFromPath(window.location.pathname);
+document.documentElement.lang = initialLang;
+
+const root = document.getElementById("root");
+const tree = (
   <StrictMode>
-    <LanguageProvider>
+    <LanguageProvider initialLang={initialLang}>
       <App />
     </LanguageProvider>
   </StrictMode>
 );
+
+// Productie-HTML is geprerenderd (zie scripts/prerender.mjs) en wordt
+// gehydrateerd; de dev-server serveert een lege shell en rendert vanaf nul.
+if (root.hasChildNodes()) {
+  hydrateRoot(root, tree);
+} else {
+  createRoot(root).render(tree);
+}
