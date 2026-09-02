@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "fraunces",
+        "reason": "Fraunces is het officiele Villa 235 merkfont uit Lukas' Visual Brand Sheet (juni 2026), bewust gekozen naast Hanken Grotesk",
+        "createdAt": "2026-09-02T10:29:09.926Z"
+      }
+    ]
+  }
+}
